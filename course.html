@@ -11,8 +11,10 @@
         .reveal .slides section { background: rgba(0,0,0,0.65); padding: 40px; border-radius: 12px; color: #fff !important; text-shadow: 2px 2px 4px #000; }
         .reveal h1, .reveal h2, .reveal h3, .reveal p, .reveal ul { color: #fff !important; }
         .reveal .progress { background: #007bff; }
-        .reveal .menu-button { position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: rgba(0,0,0,0.6); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 1em; }
-        @media (max-width: 768px) { .reveal .menu { width: 0; } .reveal .menu-button { display: block !important; } }
+        .reveal .menu-button { position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: rgba(0,0,0,0.6); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 1em; display: block; }
+        .reveal .menu { width: 250px; transition: width 0.3s; }
+        .reveal .menu.collapsed { width: 0; overflow: hidden; }
+        @media (max-width: 768px) { .reveal { font-size: 0.8em; } .reveal section { padding: 20px; } .reveal .menu { width: 0; } .reveal .menu-button { display: block !important; } .reveal .controls { display: none; } }
     </style>
 </head>
 <body>
@@ -22,13 +24,20 @@
         <div class="slides">
             <section data-background-image="https://cdn.prod.website-files.com/643507075046cf6dcb169402/67298d38aeb5b94db6e477f6_diploma-cyber-security-671ed6ef14adb.webp">
                 <h1>Curso de Seguridad de la Información</h1>
-                <p>Usa flecha derecha para avanzar. No puedes saltarte secciones.</p>
+                <p>Avanza con flecha derecha. Completa subsecciones para continuar.</p>
             </section>
 
             <section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2024/02/6-document-redaction-duplicate.png">
                     <h2>Sección 1: Principios Básicos</h2>
-                    <p>Exploraremos cada pilar y práctica en detalle.</p>
+                    <p>Clic en áreas para subsecciones.</p>
+                    <a href="#/1/1">Confidencialidad</a><br>
+                    <a href="#/1/2">Integridad</a><br>
+                    <a href="#/1/3">Disponibilidad</a><br>
+                    <a href="#/1/4">Clasifica Información</a><br>
+                    <a href="#/1/5">Necesidad de Saber</a><br>
+                    <a href="#/1/6">Reporta Incidentes</a><br>
+                    <a href="#/1/7">Actualiza Dispositivos</a>
                 </section>
                 <section data-background-image="https://emediaai.com/wp-content/uploads/2025/07/ai-for-the-cso.png">
                     <h3>Confidencialidad</h3>
@@ -42,169 +51,225 @@
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2024/02/2-rules-how-to-redact-documents.png">
                     <h3>Disponibilidad</h3>
-                    <p>Garantiza acceso cuando sea necesario. Backups y recuperación ante desastres.</p>
-                    <p>En PYMEs, evita pérdidas por downtime.</p>
+                    <p>Garantiza acceso cuando sea necesario. Implementa backups y planes de recuperación ante desastres.</p>
+                    <p>En PYMEs, un corte de servicio puede costar miles; usa cloud services con redundancia.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-4.jpg">
                     <h3>Clasifica la Información</h3>
-                    <p>Públicos, internos, confidenciales, restringidos. Etiqueta documentos.</p>
-                    <p>Datos personales protegidos por LFPDPPP.</p>
+                    <p>Identifica datos como públicos, internos, confidenciales o restringidos. Bajo LFPDPPP, datos personales deben clasificarse y protegerse adecuadamente.</p>
+                    <p>Etiqueta documentos y usa herramientas como DLP para automatizar.</p>
                 </section>
                 <section data-background-image="https://cdn.outrank.so/0d43aa65-9f35-496c-be5b-b2d6a4fe2ac6/4e11dd2b-2a96-4768-b814-7661e6388353.jpg">
                     <h3>Necesidad de Saber</h3>
-                    <p>Accede solo a lo esencial para tu rol. Implementa RBAC.</p>
+                    <p>Accede solo a lo esencial para tu rol. Ejemplo: Un vendedor no necesita ver salarios de HR.</p>
+                    <p>Implementa controles de acceso basados en roles (RBAC) en sistemas como Active Directory.</p>
                 </section>
                 <section data-background-image="https://lh7-us.googleusercontent.com/wNlC-aD1Sjz3NfNkcprQe9J1klhyGgqRgrMWZ1jGSr7oPsCPJVsgo0viX5R6pM9K6e_kFe_9DWFLaAbCoJWvwoPHaLmyZe7xUuyOKCn93w8wZJnrJ9Ex0MatYkBW3c7Dw01KxwVeq_RRY7vGqr2tHWY">
                     <h3>Reporta Incidentes</h3>
-                    <p>Notifica a TI inmediatamente. INAI en 72 h si datos personales.</p>
+                    <p>Si sospechas una brecha, notifica a TI o cumplimiento. Para datos personales, notifica al INAI en 72 horas si hay riesgo significativo.</p>
+                    <p>Usa un formulario de incidentes o hotline interna para reportes rápidos.</p>
                 </section>
                 <section data-background-image="https://www.financestrategists.com/uploads/Safety-and-Security-Measures.png">
                     <h3>Actualiza Dispositivos</h3>
-                    <p>Parches mensuales. Automatiza con WSUS o MDM.</p>
+                    <p>Instala parches de seguridad mensualmente. Ejemplo: Actualizaciones de Windows o antivirus para cerrar vulnerabilidades conocidas.</p>
+                    <p>En PYMEs, automatiza con herramientas como WSUS o MDM.</p>
                 </section>
             </section>
 
             <section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-3.jpg">
                     <h2>Sección 2: Gestión de Contraseñas</h2>
-                    <p>Detallaremos cada práctica para fortalecer tus defensas.</p>
+                    <p>Clic en áreas para subsecciones.</p>
+                    <a href="#/2/1">Contraseñas Complejas</a><br>
+                    <a href="#/2/2">No Reutilizar</a><br>
+                    <a href="#/2/3">2FA</a><br>
+                    <a href="#/2/4">Gestores de Contraseñas</a><br>
+                    <a href="#/2/5">Cambio Periódico</a><br>
+                    <a href="#/2/6">No Compartir</a>
                 </section>
                 <section data-background-image="https://lh7-us.googleusercontent.com/bdmwlU6BO4Wh5wlOcHUwaSN7cDoED1v1lDmVufJvycP9vvKLTuFWqq1Wf0FRQLaNPGQhxo1n43CvJJQyvdKrpcuIQYVSCX5Rqe3sodghJM5JJQCW3gHMkqb2geInFm17N3dyXMBM8J6Xi_EASo81jl4">
                     <h3>Contraseñas Complejas</h3>
-                    <p>12+ caracteres, mayúsculas, minúsculas, números, símbolos. Ej: P@ssw0rdSegura2023!</p>
-                    <p>Evita brute force.</p>
+                    <p>Usa al menos 12 caracteres, combinando mayúsculas, minúsculas, números y símbolos. Ejemplo: "P@ssw0rdSegura2023!". Evita palabras comunes o patrones predecibles.</p>
+                    <p>Por qué: Contraseñas débiles se crackean en segundos con brute force.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-3.png">
                     <h3>No Reutilizar</h3>
-                    <p>Una única por cuenta. Monitorea brechas en Have I Been Pwned.</p>
+                    <p>Usa una única por cuenta. Si una se compromete (ej. en una brecha de datos), no afecta otras.</p>
+                    <p>Monitorea brechas con sitios como Have I Been Pwned.</p>
                 </section>
                 <section data-background-image="https://bhirst.media/wp-content/uploads/2023/05/smartmockups_kp5sef9y-1536x963-1.webp">
                     <h3>2FA</h3>
-                    <p>Actívala siempre (SMS o app). Segundo factor bloquea accesos robados.</p>
+                    <p>Activa 2FA siempre. Ejemplo: Código SMS o app como Google Authenticator.</p>
+                    <p>Por qué: Incluso si roban tu contraseña, necesitan el segundo factor.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-1.jpg">
                     <h3>Gestores de Contraseñas</h3>
-                    <p>LastPass, Bitwarden. Genera y almacena seguras.</p>
+                    <p>Herramientas como LastPass o Bitwarden almacenan y generan contraseñas seguras. Usa una master password fuerte.</p>
+                    <p>Beneficios: Autocompleta y audita debilidades.</p>
                 </section>
                 <section data-background-image="https://www.grsprotection.com/wp-content/uploads/2023/11/busy-corporate-office-environment-scaled.jpg">
-                    <h3>Cambia cada 90 días</h3>
-                    <p>Inmediatamente tras incidente. Automatiza recordatorios.</p>
+                    <h3>Cambio Periódico</h3>
+                    <p>Cambia cada 90 días, y inmediatamente tras incidentes. En sistemas empresariales, automatiza recordatorios.</p>
+                    <p>No uses variaciones mínimas; crea nuevas complejas.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/01/HERO-Why-Document-Control-Software-is-Essential-for-Your-Business-Success-new-size.png">
                     <h3>No Compartir</h3>
-                    <p>Nunca por email/chat. Usa compartición segura si necesario.</p>
+                    <p>Nunca por email, chat o notas. Usa herramientas de compartición segura si es necesario (ej. en gestores con permisos temporales).</p>
+                    <p>Riesgo: Compartir lleva a fugas accidentales.</p>
                 </section>
             </section>
 
             <section>
                 <section data-background-image="https://cleancorps.com/wp-content/uploads/2021/02/Government-office-cleaning.png">
                     <h2>Sección 3: Políticas en el Lugar de Trabajo</h2>
-                    <p>Explicación profunda para aplicación diaria.</p>
+                    <p>Clic en áreas para subsecciones.</p>
+                    <a href="#/3/1">Documentos Físicos</a><br>
+                    <a href="#/3/2">Escritorio Limpio</a><br>
+                    <a href="#/3/3">Bloqueo de Pantallas</a><br>
+                    <a href="#/3/4">Uso de Dispositivos</a><br>
+                    <a href="#/3/5">Phishing</a><br>
+                    <a href="#/3/6">Trabajo Remoto</a><br>
+                    <a href="#/3/7">Capacitación Continua</a>
                 </section>
                 <section data-background-image="https://p0.piqsels.com/preview/553/55/638/technology-hack-hacker-hacking.jpg">
                     <h3>Documentos Físicos</h3>
-                    <p>Gabinetes cerrados. Tritura al desechar.</p>
+                    <p>Almacena en gabinetes cerrados; no desatendidos. Usa trituradoras para destruir documentos sensibles al desecharlos.</p>
+                    <p>Por qué: Previene robos físicos o visuales.</p>
                 </section>
                 <section data-background-image="https://www.julota.com/wp-content/uploads/2025/07/What-is-a-super-utilizer-1024x534.png">
                     <h3>Escritorio Limpio</h3>
-                    <p>Siempre al alejarte. Guarda documentos, elimina notas.</p>
+                    <p>Mantén libre de info sensible al alejarte. Guarda documentos, elimina notas. Aplícalo siempre, no solo al final del día.</p>
+                    <p>Beneficios: Reduce espionaje interno; fomenta hábitos seguros.</p>
                 </section>
                 <section data-background-image="https://mindingyourmedia.com/wp-content/uploads/2025/06/Cyber-Security-Services-for-Businesses-Protecting-Your-Future-with-Minding-Your-Media.png">
                     <h3>Bloqueo de Pantallas</h3>
-                    <p>Ctrl+Alt+Del al alejarte. Auto-bloqueo en 5 min.</p>
+                    <p>Bloquea al alejarte (Ctrl+Alt+Del en Windows). Configura auto-bloqueo tras 5 min de inactividad.</p>
+                    <p>Por qué: Evita accesos oportunistas en oficinas abiertas.</p>
                 </section>
                 <section data-background-image="https://lh7-us.googleusercontent.com/bdmwlU6BO4Wh5wlOcHUwaSN7cDoED1v1lDmVufJvycP9vvKLTuFWqq1Wf0FRQLaNPGQhxo1n43CvJJQyvdKrpcuIQYVSCX5Rqe3sodghJM5JJQCW3gHMkqb2geInFm17N3dyXMBM8J6Xi_EASo81jl4">
                     <h3>Uso de Dispositivos</h3>
-                    <p>No USBs sin verificar. Prohibido personales para trabajo.</p>
+                    <p>No conectes USBs sin verificar; evita Wi-Fi públicas. Prohibido dispositivos personales para trabajo.</p>
+                    <p>Riesgo: BYOD introduce malware no controlado.</p>
                 </section>
                 <section data-background-image="https://www.overtonsecurity.com/wp-content/uploads/2023/09/Advanced-Training-for-Certification-.jpg">
                     <h3>Phishing</h3>
-                    <p>Verifica remitente. No abras adjuntos sospechosos.</p>
+                    <p>Verifica remitentes; no abras adjuntos sospechosos. Reporta a TI.</p>
+                    <p>Ejemplo: Emails falsos de "banco" pidiendo creds – siempre verifica URL.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-2.png">
                     <h3>Trabajo Remoto</h3>
-                    <p>VPN obligatoria. No discutir sensible en público.</p>
+                    <p>Usa VPN; bloquea pantallas; no discusses sensible en público.</p>
+                    <p>En México, asegura cumplimiento LFPDPPP en home office.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
                     <h3>Capacitación Continua</h3>
-                    <p>Talleres anuales sobre LFPDPPP y amenazas.</p>
+                    <p>Participa en talleres anuales sobre ciberseguridad y LFPDPPP.</p>
+                    <p>Beneficios: Mantiene al día con amenazas emergentes como ransomware.</p>
                 </section>
             </section>
 
             <section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/2024-cyber-attack-breakdown-critical-incidents-and-security-tips-img-4.jpg">
-                    <h2>Sección 4: Protección contra Fugas</h2>
-                    <p>Detalles para prevenir fugas.</p>
+                    <h2>Sección 4: Protección contra Fugas</h3>
+                    <p>Clic en áreas para subsecciones.</p>
+                    <a href="#/4/1">Encripta Datos</a><br>
+                    <a href="#/4/2">Intercambio Controlado</a><br>
+                    <a href="#/4/3">Monitorea Actividades</a><br>
+                    <a href="#/4/4">Evita Redes Sociales</a><br>
+                    <a href="#/4/5">Dispositivos Perdidos</a><br>
+                    <a href="#/4/6">Auditorías Regulares</a>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-4.jpg">
                     <h3>Encripta Datos</h3>
-                    <p>AES-256 en archivos y correos.</p>
+                    <p>Usa encriptación para archivos y correos que contengan información sensible. Ejemplo: AES-256 en tools como VeraCrypt.</p>
+                    <p>Por qué: Si se pierde un dispositivo, datos permanecen protegidos.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
                     <h3>Intercambio Controlado</h3>
-                    <p>SharePoint con permisos. Evita email personal.</p>
+                    <p>Usa canales aprobados como plataformas seguras (ej. SharePoint o Google Drive con permisos restringidos) en lugar de emails personales.</p>
+                    <p>Riesgo: Emails no encriptados pueden ser interceptados.</p>
                 </section>
                 <section data-background-image="https://i-techsupport.com/wp-content/uploads/2025/10/1673000579_main_images_DNS-Security.jpg">
                     <h3>Monitorea Actividades</h3>
-                    <p>Logs y SIEM para anomalías.</p>
+                    <p>Sé consciente de herramientas de monitoreo en la empresa para detectar anomalías.</p>
+                    <p>En PYMEs, usa SIEM básicos para alertas.</p>
                 </section>
                 <section data-background-image="https://www.idmworks.com/wp-content/uploads/2024/09/IDMW_Blog-PAM_essential_790x25.jpg">
                     <h3>Evita Redes Sociales</h3>
-                    <p>No publicar info trabajo. Ajusta privacidad.</p>
+                    <p>No publiques información de trabajo en perfiles personales; ajusta configuraciones de privacidad.</p>
+                    <p>Ejemplo: Un post accidental puede revelar estrategias competitivas.</p>
                 </section>
                 <section data-background-image="https://s3.mordorintelligence.com/data-masking-market/data-masking-market-1757426797941-major-players.webp">
                     <h3>Dispositivos Perdidos</h3>
-                    <p>Reporta inmediatamente. Borrado remoto.</p>
+                    <p>Reporta inmediatamente la pérdida de laptops o móviles; usa funciones de borrado remoto.</p>
+                    <p>Herramientas: Find My Device o MDM solutions.</p>
                 </section>
                 <section data-background-image="https://tbmpayroll.com/hubfs/regulatory-risks-hr-helps-to-avoid.jpg">
                     <h3>Auditorías Regulares</h3>
-                    <p>Revisa accesos y permisos. Cumple LFPDPPP.</p>
+                    <p>Participa en revisiones periódicas de accesos y permisos, asegurando cumplimiento con la LFPDPPP.</p>
+                    <p>Incluye auditorías externas para objetividad.</p>
                 </section>
             </section>
 
             <section>
                 <section data-background-image="https://business.privacybee.com/wp-content/uploads/2023/12/image-from-rawpixel-id-5918966-jpeg.jpg">
-                    <h2>Sección 5: Información Sensible</h2>
-                    <p>Roles de alto riesgo.</p>
+                    <h2>Sección 5: Medidas para Información Sensible</h2>
+                    <p>Clic en áreas para subsecciones.</p>
+                    <a href="#/5/1">Acceso Restringido</a><br>
+                    <a href="#/5/2">Registro de Actividades</a><br>
+                    <a href="#/5/3">Manejo de Datos de Clientes</a><br>
+                    <a href="#/5/4">Protección de Salarios</a><br>
+                    <a href="#/5/5">Capacitación en Compliance</a><br>
+                    <a href="#/5/6">Respuesta a Incidentes</a><br>
+                    <a href="#/5/7">Herramientas Avanzadas</a><br>
+                    <a href="#/5/8">Evaluaciones de Riesgo</a>
                 </section>
                 <section data-background-image="https://cdn.outrank.so/0d43aa65-9f35-496c-be5b-b2d6a4fe2ac6/ce6ea287-081c-487f-84ff-abf0e511a7ef.jpg">
-                    <h3>Menor Privilegio</h3>
-                    <p>Acceso solo necesario y temporal.</p>
+                    <h3>Acceso Restringido</h3>
+                    <p>Usa principios de "menor privilegio" – accede solo a lo necesario y por el tiempo requerido.</p>
+                    <p>Ejemplo: Acceso temporal a datos de clientes para una tarea específica. Implementa con IAM tools.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-4.jpg">
-                    <h3>Logs de Accesos</h3>
-                    <p>Registra y revisa regularmente.</p>
+                    <h3>Registro de Actividades</h3>
+                    <p>Mantén logs de accesos a datos sensibles y revísalos regularmente.</p>
+                    <p>Requerido por LFPDPPP para accountability.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-2.png">
-                    <h3>Datos de Clientes</h3>
-                    <p>Anonimiza. No copies a personales.</p>
+                    <h3>Manejo de Datos de Clientes</h3>
+                    <p>Anonimiza datos cuando sea posible; no copies información a dispositivos personales. Asegura el aviso de privacidad conforme a LFPDPPP.</p>
+                    <p>Ejemplo: Usa pseudónimos en reportes.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
-                    <h3>Salarios y HR</h3>
-                    <p>Sistemas encriptados. No discutir en común.</p>
+                    <h3>Protección de Salarios</h3>
+                    <p>Usa sistemas encriptados para nóminas; evita discusiones en áreas comunes.</p>
+                    <p>Riesgo: Fugas pueden llevar a demandas laborales.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-4.jpg">
-                    <h3>Compliance</h3>
-                    <p>LFPDPPP, PCI-DSS, CNBV. Certifícate.</p>
+                    <h3>Capacitación en Compliance</h3>
+                    <p>Conoce regulaciones específicas (ej. PCI-DSS para pagos, regulaciones de la CNBV para sector financiero en México, o LFPDPPP para datos personales) y certifícate si es requerido.</p>
+                    <p>Ejemplo: Cursos en línea sobre protección de datos.</p>
                 </section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
-                    <h3>Respuesta Incidentes</h3>
-                    <p>Notifica afectados e INAI (72 h riesgos altos).</p>
+                    <h3>Respuesta a Incidentes</h3>
+                    <p>Ten un plan específico para brechas involucrando datos sensibles, incluyendo notificación a afectados y al INAI dentro de los plazos establecidos por la LFPDPPP.</p>
+                    <p>Práctica: Simulacros de brechas.</p>
                 </section>
                 <section data-background-image="https://i-techsupport.com/wp-content/uploads/2025/10/1673000579_main_images_DNS-Security.jpg">
-                    <h3>DLP</h3>
-                    <p>Bloquea fugas automáticas. Microsoft 365 DLP.</p>
+                    <h3>Herramientas Avanzadas</h3>
+                    <p>Implementa DLP (Data Loss Prevention) para monitorear y bloquear fugas automáticas.</p>
+                    <p>En PYMEs, opciones asequibles como Microsoft 365 DLP.</p>
                 </section>
                 <section data-background-image="https://www.idmworks.com/wp-content/uploads/2024/09/IDMW_Blog-PAM_essential_790x25.jpg">
-                    <h3>Evaluaciones Riesgo</h3>
-                    <p>Revisiones periódicas. Frameworks NIST.</p>
+                    <h3>Evaluaciones de Riesgo</h3>
+                    <p>Realiza revisiones periódicas de vulnerabilidades en sistemas que manejan datos delicados, considerando auditorías externas si es necesario.</p>
+                    <p>Usa frameworks como NIST para estructurar.</p>
                 </section>
             </section>
 
             <section data-background-image="https://s3.mordorintelligence.com/global-defense-cyber-security-markets-industry/global-defense-cyber-security-markets-industry-Defense-Cyber-Security-Market-Market-Share-by-Component-2025-1768469588478.webp">
                 <h2>Conclusión</h2>
-                <p>La seguridad es responsabilidad de todos.</p>
-                <a href="quiz.html" style="color:#fff; background:#007bff; padding:12px 24px; border-radius:6px; text-decoration:none;">Ir a Evaluación</a>
+                <p>La seguridad de la información es un compromiso continuo. Siguiendo estas prácticas, contribuyes a un entorno seguro y proteges tanto a la empresa como a sus stakeholders.</p>
+                <a href="quiz.html" style="color:#fff; background:#007bff; padding:12px 24px; border-radius:6px; text-decoration:none;">Ir a la Evaluación</a>
             </section>
         </div>
     </div>
@@ -217,9 +282,23 @@
             progress: true,
             slideNumber: true,
             overview: false,
+            navigationMode: 'linear',
             transition: 'slide',
             backgroundTransition: 'fade',
-            menu: { side: 'left', openButton: false, openSlideNumber: true, markers: true }
+            plugins: [ RevealMenu ],
+            menu: {
+                side: 'left',
+                openButton: false,
+                openSlideNumber: true,
+                markers: true
+            }
+        });
+
+        // Bloquear avance si no se han visto todas subsecciones
+        Reveal.addEventListener('slidechanged', function(event) {
+            if (event.currentSlide.parentElement.tagName === 'SECTION' && event.indexv < event.currentSlide.parentElement.children.length - 1) {
+                Reveal.right(); // Forzar avance vertical primero
+            }
         });
     </script>
 </body>
