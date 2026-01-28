@@ -13,4 +13,8 @@ Este repositorio contiene un sitio web simple para un curso de seguridad de la i
 - Usa Reveal.js para diapositivas (CDN externo, sin dependencias locales).
 - Si actualizas, commitea cambios y GitHub Pages se refresca automáticamente.
 
+# Proyecto de Evaluación
+
+Este proyecto utiliza Reveal.js para presentaciones interactivas. Asegúrate de que los enlaces a Reveal.js estén correctamente implementados en los archivos HTML.
+
 Contacto: Si tienes dudas, contacta al departamento de TI o al proveedor de seguridad.
