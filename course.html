@@ -17,7 +17,7 @@
         .reveal .menu-button { position: fixed; bottom: 10px; left: 10px; z-index: 1000; background: rgba(0,0,0,0.7); color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8em; display: block; }
         .reveal .menu { width: 220px; transition: width 0.3s; background: rgba(255,255,255,0.95); color: #000; }
         .reveal .menu.collapsed { width: 0 !important; overflow: hidden; }
-        .back-btn { position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); z-index: 999; background: #0056b3; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8em; }
+        .back-btn { position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); z-index: 999; background: #0056b3; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8em; display: none; }
         .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 30px 0; }
         .topic-link { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; color: #fff; text-decoration: none; font-weight: bold; }
         .topic-link:hover { background: rgba(255,255,255,0.3); transform: scale(1.05); }
@@ -275,8 +275,8 @@
             menu: { side: 'left', openButton: false, openSlideNumber: true, markers: true }
         });
 
-        // Forzar navegación secuencial
         Reveal.on('slidechanged', event => {
+            document.querySelector('.back-btn').style.display = event.indexv > 0 ? 'block' : 'none';
             if (event.currentSlide.parentNode.tagName === 'SECTION') {
                 const parent = event.currentSlide.parentNode;
                 const currentIndex = Array.from(parent.children).indexOf(event.currentSlide);
