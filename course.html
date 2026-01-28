@@ -6,27 +6,37 @@
     <title>Curso de Seguridad de la Información</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/black.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/reveal.js-menu@2.1.0/menu.min.css">
     <style>
         body { margin: 0; overflow: hidden; }
-        .reveal { font-size: 24px; }
+        .reveal { font-family: Arial, sans-serif; font-size: 24px; }
         .reveal section { background-size: cover; background-position: center; }
-        .reveal .slides section { background: rgba(0,0,0,0.75); padding: 40px; border-radius: 12px; color: #fff; text-shadow: 2px 2px 5px #000; }
+        .reveal .slides section { background: rgba(0,0,0,0.8); padding: 40px; border-radius: 12px; color: #fff; text-shadow: 2px 2px 5px #000; }
         .reveal h1, h2, h3 { color: #fff !important; margin-bottom: 20px; }
         .reveal .progress { background: #007bff; height: 5px; }
-        .reveal .menu-button { position: fixed; bottom: 10px; left: 10px; z-index: 1000; background: rgba(0,0,0,0.7); color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8em; display: block; }
-        .reveal .menu { width: 220px; transition: width 0.3s; background: rgba(255,255,255,0.95); color: #000; }
-        .reveal .menu.collapsed { width: 0 !important; overflow: hidden; }
-        .back-btn { position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); z-index: 999; background: #0056b3; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8em; display: none; }
+        .menu-btn { position: fixed; bottom: 10px; left: 10px; z-index: 1000; background: rgba(0,0,0,0.7); color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8em; }
+        .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100%; background: rgba(255,255,255,0.95); color: #000; transition: transform 0.3s; transform: translateX(-100%); z-index: 999; overflow-y: auto; padding: 20px; }
+        .sidebar.open { transform: translateX(0); }
+        .back-btn { position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%); z-index: 999; background: #0056b3; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8em; display: none; }
         .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 30px 0; }
         .topic-link { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; color: #fff; text-decoration: none; font-weight: bold; }
         .topic-link:hover { background: rgba(255,255,255,0.3); transform: scale(1.05); }
-        @media (max-width: 768px) { .reveal { font-size: 16px; } .reveal section { padding: 20px; } .reveal .menu { width: 0; } .back-btn { bottom: 50px; font-size: 0.7em; } }
+        @media (max-width: 768px) { .reveal { font-size: 16px; } .reveal section { padding: 20px; } .sidebar { width: 80%; } .back-btn { bottom: 50px; font-size: 0.7em; } }
     </style>
 </head>
 <body>
-    <button class="menu-button" onclick="document.querySelector('.reveal .menu').classList.toggle('collapsed')">Menú</button>
+    <button class="menu-btn" onclick="document.querySelector('.sidebar').classList.toggle('open')">Menú</button>
     <button class="back-btn" onclick="Reveal.up()">Volver</button>
+
+    <div class="sidebar">
+        <h4>Navegación</h4>
+        <a href="#/0/0">Inicio</a><br>
+        <a href="#/1/0">Sección 1</a><br>
+        <a href="#/2/0">Sección 2</a><br>
+        <a href="#/3/0">Sección 3</a><br>
+        <a href="#/4/0">Sección 4</a><br>
+        <a href="#/5/0">Sección 5</a><br>
+        <a href="#/6/0">Conclusión</a>
+    </div>
 
     <div class="reveal">
         <div class="slides">
@@ -123,6 +133,7 @@
                 </section>
             </section>
 
+            <!-- Sección 3 -->
             <section>
                 <section data-background-image="https://cleancorps.com/wp-content/uploads/2021/02/Government-office-cleaning.png">
                     <h2>Sección 3: Políticas en el Lugar de Trabajo</h2>
@@ -166,6 +177,7 @@
                 </section>
             </section>
 
+            <!-- Sección 4 -->
             <section>
                 <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/2024-cyber-attack-breakdown-critical-incidents-and-security-tips-img-4.jpg">
                     <h2>Sección 4: Protección contra Fugas</h2>
@@ -261,7 +273,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.js"></script>
-    <script src="https://unpkg.com/reveal.js-menu@2.1.0/menu.min.js"></script>
     <script>
         Reveal.initialize({
             controls: false,
@@ -270,20 +281,11 @@
             navigationMode: 'linear',
             overview: false,
             transition: 'slide',
-            backgroundTransition: 'fade',
-            plugins: [ RevealMenu ],
-            menu: { side: 'left', openButton: false, openSlideNumber: true, markers: true }
+            backgroundTransition: 'fade'
         });
 
         Reveal.on('slidechanged', event => {
             document.querySelector('.back-btn').style.display = event.indexv > 0 ? 'block' : 'none';
-            if (event.currentSlide.parentNode.tagName === 'SECTION') {
-                const parent = event.currentSlide.parentNode;
-                const currentIndex = Array.from(parent.children).indexOf(event.currentSlide);
-                if (currentIndex < parent.children.length - 1) {
-                    Reveal.slide(event.indexh, currentIndex);
-                }
-            }
         });
     </script>
 </body>
