@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evaluación de Seguridad de la Información</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { max-width: 600px; margin: auto; }
+        label { display: block; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Autoevaluación (2-5 minutos)</h1>
+    <form id="quizForm">
+        <p>1. ¿Qué hace una contraseña fuerte?</p>
+        <label><input type="radio" name="q1" value="a"> a) Al menos 8 caracteres solo con letras.</label>
+        <label><input type="radio" name="q1" value="b"> b) Al menos 12 caracteres, mezcla de mayúsculas, minúsculas, números y símbolos.</label>
+        <label><input type="radio" name="q1" value="c"> c) Tu fecha de nacimiento.</label>
+        <label><input type="radio" name="q1" value="d"> d) La misma para todas las cuentas.</label>
+
+        <p>2. ¿Cómo previenes phishing en el correo electrónico?</p>
+        <label><input type="radio" name="q2" value="a"> a) Abres todos los adjuntos para verificar.</label>
+        <label><input type="radio" name="q2" value="b"> b) Verifica remitentes, no abras adjuntos o enlaces sospechosos, reporta emails dudosos.</label>
+        <label><input type="radio" name="q2" value="c"> c) Ignoras los emails de desconocidos.</label>
+        <label><input type="radio" name="q2" value="d"> d) Compartes credenciales si lo piden.</label>
+
+        <p>3. Para datos sensibles, ¿qué es el principio de "menor privilegio"?</p>
+        <label><input type="radio" name="q3" value="a"> a) Acceso ilimitado para todos los empleados.</label>
+        <label><input type="radio" name="q3" value="b"> b) Acceso solo a la información necesaria para tu rol y por el tiempo requerido.</label>
+        <label><input type="radio" name="q3" value="c"> c) Compartir datos con colegas sin restricciones.</label>
+        <label><input type="radio" name="q3" value="d"> d) Ignorar logs de accesos.</label>
+
+        <p>4. ¿Qué debes hacer con documentos físicos confidenciales al final del día?</p>
+        <label><input type="radio" name="q4" value="a"> a) Dejarlos en el escritorio para mañana.</label>
+        <label><input type="radio" name="q4" value="b"> b) Almacenarlos en gabinetes cerrados, implementar política de escritorio limpio y triturar al desechar.</label>
+        <label><input type="radio" name="q4" value="c"> c) Compartirlos con el equipo.</label>
+        <label><input type="radio" name="q4" value="d"> d) Tirarlos a la basura normal.</label>
+
+        <p>5. ¿Por qué y cómo bloquear tu pantalla?</p>
+        <label><input type="radio" name="q5" value="a"> a) Para ahorrar energía; usa el botón de apagado.</label>
+        <label><input type="radio" name="q5" value="b"> b) Para prevenir accesos no autorizados; usa atajos como Ctrl+Alt+Del cuando te alejes.</label>
+        <label><input type="radio" name="q5" value="c"> c) Solo en casa; no es necesario en la oficina.</label>
+        <label><input type="radio" name="q5" value="d"> d) Bloquea solo si alguien te lo pide.</label>
+
+        <p>6. ¿Qué regulación mexicana principal aplica a la protección de datos personales?</p>
+        <label><input type="radio" name="q6" value="a"> a) GDPR.</label>
+        <label><input type="radio" name="q6" value="b"> b) HIPAA.</label>
+        <label><input type="radio" name="q6" value="c"> c) LFPDPPP (Ley Federal de Protección de Datos Personales en Posesión de los Particulares).</label>
+        <label><input type="radio" name="q6" value="d"> d) PCI-DSS.</label>
+
+        <button type="button" onclick="submitQuiz()">Enviar</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        function submitQuiz() {
+            const answers = { q1: 'b', q2: 'b', q3: 'b', q4: 'b', q5: 'b', q6: 'c' };
+            let score = 0;
+            for (let i = 1; i <= 6; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) score++;
+            }
+            document.getElementById('result').innerHTML = `<h2>Puntuación: ${score}/6</h2><p>Si sacaste menos de 5, revisa el curso nuevamente.</p>`;
+        }
+    </script>
+</body>
+</html>
