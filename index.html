@@ -1,261 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Curso de Seguridad de la Información</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/simple.min.css">
-    <!-- Plugin para menú de navegación -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.min.css">
+    <title>Entrenamiento en Seguridad de la Información</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Estilos para placeholders de imágenes de fondo */
-        .reveal section {
-            background-size: cover;
-            background-position: center;
-        }
-        /* Placeholder genérico; reemplaza con URLs reales */
-        .bg-placeholder {
-            background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Sección');
-        }
+        body { background-color: #f8f9fa; font-family: Arial, sans-serif; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        .btn { margin: 10px; }
     </style>
 </head>
 <body>
-    <div class="reveal">
-        <div class="slides">
-            <section class="bg-placeholder">
-                <h1>Manual de Entrenamiento: Mejores Prácticas de Seguridad de la Información</h1>
-                <p>Bienvenido al curso de entrenamiento de 15 minutos. Navega con flechas o usa el menú a la izquierda (presiona 'm' para abrirlo).</p>
-            </section>
-
-            <!-- Sección 1: Principios Básicos - Diapositivas detalladas por punto -->
-            <section>
-                <section class="bg-placeholder">
-                    <h2>Sección 1: Principios Básicos de Seguridad de la Información</h2>
-                    <p>Exploraremos cada pilar y práctica en detalle.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Pilares de la Seguridad: Confidencialidad</h3>
-                    <p>La confidencialidad protege los datos de accesos no autorizados. Ejemplo: Encriptar emails con información sensible para evitar que sean interceptados por terceros no autorizados.</p>
-                    <p>En México, esto se alinea con la LFPDPPP, que exige medidas para prevenir divulgaciones no consentidas.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Pilares de la Seguridad: Integridad</h3>
-                    <p>La integridad asegura que los datos no sean alterados sin autorización. Usa checksums o firmas digitales para verificar que los archivos no han sido modificados durante la transmisión o almacenamiento.</p>
-                    <p>En un entorno empresarial, esto previene fraudes como cambios en registros financieros.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Pilares de la Seguridad: Disponibilidad</h3>
-                    <p>La disponibilidad garantiza acceso a los datos cuando sea necesario. Implementa backups regulares y planes de recuperación ante desastres para minimizar downtime.</p>
-                    <p>En PYMEs, un corte de servicio puede costar miles; usa cloud services con redundancia.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Mejores Prácticas: Clasifica la Información</h3>
-                    <p>Identifica datos como públicos (ej. sitio web), internos (políticas internas), confidenciales (datos de clientes) o restringidos (salarios). Bajo LFPDPPP, datos personales deben clasificarse y protegerse adecuadamente.</p>
-                    <p>Etiqueta documentos y usa herramientas como DLP para automatizar.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Mejores Prácticas: Principio de "Necesidad de Saber"</h3>
-                    <p>Accede solo a lo esencial para tu rol. Ejemplo: Un vendedor no necesita ver salarios de HR.</p>
-                    <p>Implementa controles de acceso basados en roles (RBAC) en sistemas como Active Directory.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Mejores Prácticas: Reporta Incidentes Inmediatamente</h3>
-                    <p>Si sospechas una brecha, notifica a TI o cumplimiento. Para datos personales, notifica al INAI en 72 horas si hay riesgo significativo.</p>
-                    <p>Usa un formulario de incidentes o hotline interna para reportes rápidos.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Mejores Prácticas: Mantén Actualizados Tus Dispositivos</h3>
-                    <p>Instala parches de seguridad mensualmente. Ejemplo: Actualizaciones de Windows o antivirus para cerrar vulnerabilidades conocidas.</p>
-                    <p>En PYMEs, automatiza con herramientas como WSUS o MDM.</p>
-                </section>
-            </section>
-
-            <!-- Sección 2: Gestión de Contraseñas - Diapositivas detalladas -->
-            <section>
-                <section class="bg-placeholder">
-                    <h2>Sección 2: Gestión Segura de Contraseñas</h2>
-                    <p>Detallaremos cada práctica para fortalecer tus defensas.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Crea Contraseñas Complejas</h3>
-                    <p>Usa al menos 12 caracteres, combinando mayúsculas, minúsculas, números y símbolos. Ejemplo: "P@ssw0rdSegura2023!". Evita palabras comunes o patrones predecibles.</p>
-                    <p>Por qué: Contraseñas débiles se crackean en segundos con brute force.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Evita Reutilizar Contraseñas</h3>
-                    <p>Usa una única por cuenta. Si una se compromete (ej. en una brecha de datos), no afecta otras.</p>
-                    <p>Monitorea brechas con sitios como Have I Been Pwned.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Implementa Autenticación de Dos Factores (2FA)</h3>
-                    <p>Activa 2FA siempre. Ejemplo: Código SMS o app como Google Authenticator.</p>
-                    <p>Por qué: Incluso si roban tu contraseña, necesitan el segundo factor.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Usa Gestores de Contraseñas</h3>
-                    <p>Herramientas como LastPass o Bitwarden almacenan y generan contraseñas seguras. Usa una master password fuerte.</p>
-                    <p>Beneficios: Autocompleta y audita debilidades.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Cambia Contraseñas Periódicamente</h3>
-                    <p>Cambia cada 90 días, y inmediatamente tras incidentes. En sistemas empresariales, automatiza recordatorios.</p>
-                    <p>No uses variaciones mínimas; crea nuevas complejas.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>No Compartas Contraseñas</h3>
-                    <p>Nunca por email, chat o notas. Usa herramientas de compartición segura si es necesario (ej. en gestores con permisos temporales).</p>
-                    <p>Riesgo: Compartir lleva a fugas accidentales.</p>
-                </section>
-            </section>
-
-            <!-- Sección 3: Políticas de Seguridad - Diapositivas detalladas -->
-            <section>
-                <section class="bg-placeholder">
-                    <h2>Sección 3: Políticas de Seguridad en el Lugar de Trabajo</h2>
-                    <p>Explicación profunda de cada política para aplicación diaria.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Manejo de Documentos Físicos</h3>
-                    <p>Almacena en gabinetes cerrados; no desatendidos. Tritura al desechar. Ejemplo: Usa shredders certificados para datos sensibles.</p>
-                    <p>Por qué: Previene robos físicos o visuales.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Política de Escritorio Limpio</h3>
-                    <p>Mantén libre de info sensible al alejarte. Guarda documentos, elimina notas. Aplícalo siempre, no solo al final del día.</p>
-                    <p>Beneficios: Reduce espionaje interno; fomenta hábitos seguros.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Bloqueo de Pantallas</h3>
-                    <p>Bloquea al alejarte (Ctrl+Alt+Del en Windows). Configura auto-bloqueo tras 5 min de inactividad.</p>
-                    <p>Por qué: Evita accesos oportunistas en oficinas abiertas.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Uso de Dispositivos</h3>
-                    <p>No conectes USBs sin verificar; evita Wi-Fi públicas. Prohibido dispositivos personales para trabajo.</p>
-                    <p>Riesgo: BYOD introduce malware no controlado.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Correo Electrónico y Phishing</h3>
-                    <p>Verifica remitentes; no abras adjuntos sospechosos. Reporta a TI.</p>
-                    <p>Ejemplo: Emails falsos de "banco" pidiendo creds – siempre verifica URL.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Trabajo Remoto</h3>
-                    <p>Usa VPN; bloquea pantallas; no discusses sensible en público.</p>
-                    <p>En México, asegura cumplimiento LFPDPPP en home office.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Capacitación Continua</h3>
-                    <p>Participa en talleres anuales sobre ciberseguridad y LFPDPPP.</p>
-                    <p>Beneficios: Mantiene al día con amenazas emergentes como ransomware.</p>
-                </section>
-            </section>
-
-            <!-- Sección 4: Protección contra Fugas - Diapositivas detalladas -->
-            <section>
-                <section class="bg-placeholder">
-                    <h2>Sección 4: Protección contra Fugas de Información</h2>
-                    <p>Detalles para prevenir fugas en profundidad.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Encripta Datos</h3>
-                    <p>Usa encriptación para archivos/correos sensibles. Ejemplo: AES-256 en tools como VeraCrypt.</p>
-                    <p>Por qué: Si se pierde un dispositivo, datos permanecen protegidos.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Controla el Intercambio de Datos</h3>
-                    <p>Usa plataformas seguras como SharePoint con permisos. Evita emails personales.</p>
-                    <p>Riesgo: Emails no encriptados pueden ser interceptados.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Monitorea Actividades</h3>
-                    <p>Sé consciente de logs y herramientas de monitoreo para detectar anomalías.</p>
-                    <p>En PYMEs, usa SIEM básicos para alertas.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Evita Redes Sociales</h3>
-                    <p>No publiques info de trabajo; ajusta privacidad.</p>
-                    <p>Ejemplo: Un post accidental puede revelar estrategias competitivas.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Manejo de Dispositivos Perdidos</h3>
-                    <p>Reporta inmediatamente; usa borrado remoto.</p>
-                    <p>Herramientas: Find My Device o MDM solutions.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Auditorías Regulares</h3>
-                    <p>Revisa accesos y permisos periódicamente, cumpliendo LFPDPPP.</p>
-                    <p>Incluye auditorías externas para objetividad.</p>
-                </section>
-            </section>
-
-            <!-- Sección 5: Medidas para Información Sensible - Diapositivas detalladas -->
-            <section>
-                <section class="bg-placeholder">
-                    <h2>Sección 5: Medidas Específicas para Personal que Maneja Información Sensible</h2>
-                    <p>Enfoque en roles de alto riesgo con detalles regulatorios.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Acceso Restringido: Menor Privilegio</h3>
-                    <p>Accede solo a lo necesario por tiempo limitado. Ejemplo: Acceso temporal a datos de clientes para una tarea específica.</p>
-                    <p>Implementa con IAM tools.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Registro de Actividades</h3>
-                    <p>Mantén logs de accesos; revísalos regularmente para detectar irregularidades.</p>
-                    <p>Requerido por LFPDPPP para accountability.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Manejo de Datos de Clientes</h3>
-                    <p>Anonimiza cuando posible; no copies a personales. Asegura aviso de privacidad.</p>
-                    <p>Ejemplo: Usa pseudónimos en reportes.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Protección de Salarios y Datos HR</h3>
-                    <p>Usa sistemas encriptados; evita discusiones comunes.</p>
-                    <p>Riesgo: Fugas pueden llevar a demandas laborales.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Capacitación en Compliance</h3>
-                    <p>Conoce LFPDPPP, PCI-DSS, CNBV; certifícate.</p>
-                    <p>Ejemplo: Cursos en línea sobre protección de datos.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Respuesta a Incidentes</h3>
-                    <p>Plan específico: Notifica afectados e INAI en plazos (72 horas para riesgos altos).</p>
-                    <p>Práctica: Simulacros de brechas.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Uso de Herramientas Avanzadas</h3>
-                    <p>Implementa DLP para bloquear fugas automáticas.</p>
-                    <p>En PYMEs, opciones asequibles como Microsoft 365 DLP.</p>
-                </section>
-                <section class="bg-placeholder">
-                    <h3>Evaluaciones de Riesgo</h3>
-                    <p>Revisiones periódicas de vulnerabilidades; auditorías externas.</p>
-                    <p>Usa frameworks como NIST para estructurar.</p>
-                </section>
-            </section>
-
-            <section class="bg-placeholder">
-                <h2>Conclusión</h2>
-                <p>La seguridad es un compromiso continuo. Procede a la evaluación.</p>
-                <a href="quiz.html">Ir a la Evaluación</a>
-            </section>
-        </div>
+    <div class="container text-center mt-5">
+        <h1>Bienvenido al Programa de Entrenamiento en Seguridad de la Información</h1>
+        <p>Hola, Omar Puente. Como proveedor de servicios de seguridad para PYMEs, este sitio está diseñado para capacitar a tus empleados en mejores prácticas de seguridad, adaptadas a regulaciones mexicanas como la LFPDPPP. El propósito es reducir riesgos de ciberataques, fugas de datos y violaciones de privacidad, fomentando una cultura de seguridad en tu empresa.</p>
+        <p>Este entrenamiento dura aproximadamente 15 minutos para el curso principal y 2-5 minutos para la evaluación. Al completarlo, los empleados ganarán conocimiento práctico para proteger información confidencial, como contraseñas, documentos físicos y datos sensibles de clientes o salarios.</p>
+        
+        <h2>Instrucciones de Navegación</h2>
+        <ul class="text-start">
+            <li><strong>Curso Principal</strong>: Haz clic en "Iniciar Curso" para acceder a las secciones interactivas. Usa el panel de navegación izquierdo (colapsable) para moverte entre secciones. El panel highlighteará las secciones que ya has leído para rastrear tu progreso.</li>
+            <li><strong>Evaluación</strong>: Después del curso, regresa aquí o ve directamente a "Tomar Evaluación" para responder un quiz rápido. Recibirás una puntuación inmediata.</li>
+            <li><strong>Navegación General</strong>: Usa los botones en la parte superior o inferior de cada página para volver al landing. El sitio es responsive, así que funciona en desktops, tablets y móviles. Si tienes dudas, contacta a TI.</li>
+            <li><strong>Consejos</strong>: Lee cada sección con atención; incluye ejemplos reales y explicaciones profundas. Para un mejor aprendizaje, toma notas y aplica lo aprendido en tu día a día.</li>
+        </ul>
+        
+        <a href="course.html" class="btn btn-primary btn-lg">Iniciar Curso</a>
+        <a href="quiz.html" class="btn btn-secondary btn-lg">Tomar Evaluación</a>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.min.js"></script>
-    <script>
-        Reveal.initialize({
-            plugins: [ RevealMenu ],
-            menu: {
-                side: 'left',
-                openButton: true,
-                openSlideNumber: true,
-                markers: true
-            }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
