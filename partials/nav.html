@@ -1,13 +1,21 @@
-    <button class="menu-btn" onclick="document.querySelector('.sidebar').classList.toggle('open')">Menú</button>
-    <button class="back-btn" onclick="Reveal.up()">Volver</button>
+        <!-- Bootstrap offcanvas for navigation -->
+        <button class="btn btn-primary menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#navOffcanvas" aria-controls="navOffcanvas">Menú</button>
+        <button class="btn btn-secondary back-btn" onclick="Reveal && Reveal.up ? Reveal.up() : window.history.back()">Volver</button>
 
-    <div class="sidebar">
-        <h4>Navegación</h4>
-        <a href="#/0/0">Inicio</a><br>
-        <a href="#/1/0">Sección 1</a><br>
-        <a href="#/2/0">Sección 2</a><br>
-        <a href="#/3/0">Sección 3</a><br>
-        <a href="#/4/0">Sección 4</a><br>
-        <a href="#/5/0">Sección 5</a><br>
-        <a href="#/6/0">Conclusión</a>
-    </div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="navOffcanvas" aria-labelledby="navOffcanvasLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="navOffcanvasLabel">Navegación</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action nav-link" data-h="0" data-v="0">Inicio</a>
+                    <a href="#" class="list-group-item list-group-item-action nav-link" data-h="1" data-v="0">Sección 1</a>
+                    <a href="#" class="list-group-item list-group-item-action nav-link" data-h="2" data-v="0">Sección 2</a>
+                    <a href="#" class="list-group-item list-group-item-action nav-link" data-h="3" data-v="0">Sección 3</a>
+                    <a href="#" class="list-group-item list-group-item-action nav-link" data-h="4" data-v="0">Sección 4</a>
+                    <a href="#" class="list-group-item list-group-item-action nav-link" data-h="5" data-v="0">Sección 5</a>
+                    <a href="#" class="list-group-item list-group-item-action nav-link" data-h="6" data-v="0">Conclusión</a>
+                </div>
+            </div>
+        </div>
