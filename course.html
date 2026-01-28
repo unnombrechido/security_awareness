@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Curso de Seguridad de la Información</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/simple.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/black.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.min.css">
     <style>
-        .reveal section { background-size: cover; background-position: center; color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
-        .reveal .menu { width: 250px; transition: width 0.3s; }
-        .reveal .menu.collapsed { width: 0; overflow: hidden; }
+        .reveal section { background-size: cover; background-position: center; }
+        .reveal .slides section { background: rgba(0,0,0,0.65); padding: 40px; border-radius: 12px; color: #fff !important; text-shadow: 2px 2px 4px #000; }
+        .reveal h1, .reveal h2, .reveal h3, .reveal p, .reveal ul { color: #fff !important; }
+        .reveal .progress { background: #007bff; }
         .reveal .menu-button { position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: rgba(0,0,0,0.6); color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 1em; }
         @media (max-width: 768px) { .reveal .menu { width: 0; } .reveal .menu-button { display: block !important; } }
     </style>
@@ -19,192 +20,191 @@
 
     <div class="reveal">
         <div class="slides">
-            <section style="background-image: url('https://cdn.prod.website-files.com/643507075046cf6dcb169402/67298d38aeb5b94db6e477f6_diploma-cyber-security-671ed6ef14adb.webp');">
+            <section data-background-image="https://cdn.prod.website-files.com/643507075046cf6dcb169402/67298d38aeb5b94db6e477f6_diploma-cyber-security-671ed6ef14adb.webp">
                 <h1>Curso de Seguridad de la Información</h1>
-                <p>Navega con flechas o menú izquierdo (presiona 'm' o botón inferior en móvil).</p>
+                <p>Usa flecha derecha para avanzar. No puedes saltarte secciones.</p>
             </section>
 
             <section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2024/02/6-document-redaction-duplicate.png');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2024/02/6-document-redaction-duplicate.png">
                     <h2>Sección 1: Principios Básicos</h2>
                     <p>Exploraremos cada pilar y práctica en detalle.</p>
                 </section>
-                <section style="background-image: url('https://emediaai.com/wp-content/uploads/2025/07/ai-for-the-cso.png');">
+                <section data-background-image="https://emediaai.com/wp-content/uploads/2025/07/ai-for-the-cso.png">
                     <h3>Confidencialidad</h3>
-                    <p>Protege datos de accesos no autorizados. Ejemplo: Encriptar emails sensibles.</p>
+                    <p>Protege datos de accesos no autorizados. Ejemplo: Encriptar emails con información sensible.</p>
                     <p>En México, alineado con LFPDPPP.</p>
                 </section>
-                <section style="background-image: url('https://www.coresite.com/hubfs/blog%20images/body/Uptime%20reports/Outage%20causes%20smaller.jpg');">
+                <section data-background-image="https://www.coresite.com/hubfs/blog%20images/body/Uptime%20reports/Outage%20causes%20smaller.jpg">
                     <h3>Integridad</h3>
-                    <p>Asegura datos no alterados. Usa checksums o firmas digitales.</p>
+                    <p>Asegura que los datos no sean alterados. Usa checksums o firmas digitales.</p>
                     <p>Previene fraudes en registros financieros.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2024/02/2-rules-how-to-redact-documents.png');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2024/02/2-rules-how-to-redact-documents.png">
                     <h3>Disponibilidad</h3>
-                    <p>Garantiza acceso cuando se necesita. Backups y recuperación ante desastres.</p>
+                    <p>Garantiza acceso cuando sea necesario. Backups y recuperación ante desastres.</p>
                     <p>En PYMEs, evita pérdidas por downtime.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-4.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-4.jpg">
                     <h3>Clasifica la Información</h3>
                     <p>Públicos, internos, confidenciales, restringidos. Etiqueta documentos.</p>
                     <p>Datos personales protegidos por LFPDPPP.</p>
                 </section>
-                <section style="background-image: url('https://cdn.outrank.so/0d43aa65-9f35-496c-be5b-b2d6a4fe2ac6/4e11dd2b-2a96-4768-b814-7661e6388353.jpg');">
+                <section data-background-image="https://cdn.outrank.so/0d43aa65-9f35-496c-be5b-b2d6a4fe2ac6/4e11dd2b-2a96-4768-b814-7661e6388353.jpg">
                     <h3>Necesidad de Saber</h3>
                     <p>Accede solo a lo esencial para tu rol. Implementa RBAC.</p>
                 </section>
-                <section style="background-image: url('https://lh7-us.googleusercontent.com/wNlC-aD1Sjz3NfNkcprQe9J1klhyGgqRgrMWZ1jGSr7oPsCPJVsgo0viX5R6pM9K6e_kFe_9DWFLaAbCoJWvwoPHaLmyZe7xUuyOKCn93w8wZJnrJ9Ex0MatYkBW3c7Dw01KxwVeq_RRY7vGqr2tHWY');">
+                <section data-background-image="https://lh7-us.googleusercontent.com/wNlC-aD1Sjz3NfNkcprQe9J1klhyGgqRgrMWZ1jGSr7oPsCPJVsgo0viX5R6pM9K6e_kFe_9DWFLaAbCoJWvwoPHaLmyZe7xUuyOKCn93w8wZJnrJ9Ex0MatYkBW3c7Dw01KxwVeq_RRY7vGqr2tHWY">
                     <h3>Reporta Incidentes</h3>
                     <p>Notifica a TI inmediatamente. INAI en 72 h si datos personales.</p>
                 </section>
-                <section style="background-image: url('https://www.financestrategists.com/uploads/Safety-and-Security-Measures.png');">
+                <section data-background-image="https://www.financestrategists.com/uploads/Safety-and-Security-Measures.png">
                     <h3>Actualiza Dispositivos</h3>
                     <p>Parches mensuales. Automatiza con WSUS o MDM.</p>
                 </section>
             </section>
 
             <section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-3.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-3.jpg">
                     <h2>Sección 2: Gestión de Contraseñas</h2>
-                    <p>Detallaremos cada práctica.</p>
+                    <p>Detallaremos cada práctica para fortalecer tus defensas.</p>
                 </section>
-                <section style="background-image: url('https://lh7-us.googleusercontent.com/bdmwlU6BO4Wh5wlOcHUwaSN7cDoED1v1lDmVufJvycP9vvKLTuFWqq1Wf0FRQLaNPGQhxo1n43CvJJQyvdKrpcuIQYVSCX5Rqe3sodghJM5JJQCW3gHMkqb2geInFm17N3dyXMBM8J6Xi_EASo81jl4');">
+                <section data-background-image="https://lh7-us.googleusercontent.com/bdmwlU6BO4Wh5wlOcHUwaSN7cDoED1v1lDmVufJvycP9vvKLTuFWqq1Wf0FRQLaNPGQhxo1n43CvJJQyvdKrpcuIQYVSCX5Rqe3sodghJM5JJQCW3gHMkqb2geInFm17N3dyXMBM8J6Xi_EASo81jl4">
                     <h3>Contraseñas Complejas</h3>
-                    <p>12+ caracteres, mayúsculas, minúsculas, números, símbolos.</p>
-                    <p>Ej: P@ssw0rdSegura2023!</p>
+                    <p>12+ caracteres, mayúsculas, minúsculas, números, símbolos. Ej: P@ssw0rdSegura2023!</p>
+                    <p>Evita brute force.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-3.png');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-3.png">
                     <h3>No Reutilizar</h3>
                     <p>Una única por cuenta. Monitorea brechas en Have I Been Pwned.</p>
                 </section>
-                <section style="background-image: url('https://bhirst.media/wp-content/uploads/2023/05/smartmockups_kp5sef9y-1536x963-1.webp');">
+                <section data-background-image="https://bhirst.media/wp-content/uploads/2023/05/smartmockups_kp5sef9y-1536x963-1.webp">
                     <h3>2FA</h3>
-                    <p>Actívala siempre (SMS o app).</p>
-                    <p>Segundo factor bloquea accesos robados.</p>
+                    <p>Actívala siempre (SMS o app). Segundo factor bloquea accesos robados.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-1.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-1.jpg">
                     <h3>Gestores de Contraseñas</h3>
                     <p>LastPass, Bitwarden. Genera y almacena seguras.</p>
                 </section>
-                <section style="background-image: url('https://www.grsprotection.com/wp-content/uploads/2023/11/busy-corporate-office-environment-scaled.jpg');">
+                <section data-background-image="https://www.grsprotection.com/wp-content/uploads/2023/11/busy-corporate-office-environment-scaled.jpg">
                     <h3>Cambia cada 90 días</h3>
                     <p>Inmediatamente tras incidente. Automatiza recordatorios.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/01/HERO-Why-Document-Control-Software-is-Essential-for-Your-Business-Success-new-size.png');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/01/HERO-Why-Document-Control-Software-is-Essential-for-Your-Business-Success-new-size.png">
                     <h3>No Compartir</h3>
                     <p>Nunca por email/chat. Usa compartición segura si necesario.</p>
                 </section>
             </section>
 
             <section>
-                <section style="background-image: url('https://cleancorps.com/wp-content/uploads/2021/02/Government-office-cleaning.png');">
+                <section data-background-image="https://cleancorps.com/wp-content/uploads/2021/02/Government-office-cleaning.png">
                     <h2>Sección 3: Políticas en el Lugar de Trabajo</h2>
                     <p>Explicación profunda para aplicación diaria.</p>
                 </section>
-                <section style="background-image: url('https://p0.piqsels.com/preview/553/55/638/technology-hack-hacker-hacking.jpg');">
+                <section data-background-image="https://p0.piqsels.com/preview/553/55/638/technology-hack-hacker-hacking.jpg">
                     <h3>Documentos Físicos</h3>
                     <p>Gabinetes cerrados. Tritura al desechar.</p>
                 </section>
-                <section style="background-image: url('https://www.julota.com/wp-content/uploads/2025/07/What-is-a-super-utilizer-1024x534.png');">
+                <section data-background-image="https://www.julota.com/wp-content/uploads/2025/07/What-is-a-super-utilizer-1024x534.png">
                     <h3>Escritorio Limpio</h3>
                     <p>Siempre al alejarte. Guarda documentos, elimina notas.</p>
                 </section>
-                <section style="background-image: url('https://mindingyourmedia.com/wp-content/uploads/2025/06/Cyber-Security-Services-for-Businesses-Protecting-Your-Future-with-Minding-Your-Media.png');">
+                <section data-background-image="https://mindingyourmedia.com/wp-content/uploads/2025/06/Cyber-Security-Services-for-Businesses-Protecting-Your-Future-with-Minding-Your-Media.png">
                     <h3>Bloqueo de Pantallas</h3>
                     <p>Ctrl+Alt+Del al alejarte. Auto-bloqueo en 5 min.</p>
                 </section>
-                <section style="background-image: url('https://lh7-us.googleusercontent.com/bdmwlU6BO4Wh5wlOcHUwaSN7cDoED1v1lDmVufJvycP9vvKLTuFWqq1Wf0FRQLaNPGQhxo1n43CvJJQyvdKrpcuIQYVSCX5Rqe3sodghJM5JJQCW3gHMkqb2geInFm17N3dyXMBM8J6Xi_EASo81jl4');">
+                <section data-background-image="https://lh7-us.googleusercontent.com/bdmwlU6BO4Wh5wlOcHUwaSN7cDoED1v1lDmVufJvycP9vvKLTuFWqq1Wf0FRQLaNPGQhxo1n43CvJJQyvdKrpcuIQYVSCX5Rqe3sodghJM5JJQCW3gHMkqb2geInFm17N3dyXMBM8J6Xi_EASo81jl4">
                     <h3>Uso de Dispositivos</h3>
                     <p>No USBs sin verificar. Prohibido personales para trabajo.</p>
                 </section>
-                <section style="background-image: url('https://www.overtonsecurity.com/wp-content/uploads/2023/09/Advanced-Training-for-Certification-.jpg');">
+                <section data-background-image="https://www.overtonsecurity.com/wp-content/uploads/2023/09/Advanced-Training-for-Certification-.jpg">
                     <h3>Phishing</h3>
                     <p>Verifica remitente. No abras adjuntos sospechosos.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-2.png');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-2.png">
                     <h3>Trabajo Remoto</h3>
                     <p>VPN obligatoria. No discutir sensible en público.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
                     <h3>Capacitación Continua</h3>
                     <p>Talleres anuales sobre LFPDPPP y amenazas.</p>
                 </section>
             </section>
 
             <section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/2024-cyber-attack-breakdown-critical-incidents-and-security-tips-img-4.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/2024-cyber-attack-breakdown-critical-incidents-and-security-tips-img-4.jpg">
                     <h2>Sección 4: Protección contra Fugas</h2>
                     <p>Detalles para prevenir fugas.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-4.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-4.jpg">
                     <h3>Encripta Datos</h3>
                     <p>AES-256 en archivos y correos.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
                     <h3>Intercambio Controlado</h3>
                     <p>SharePoint con permisos. Evita email personal.</p>
                 </section>
-                <section style="background-image: url('https://i-techsupport.com/wp-content/uploads/2025/10/1673000579_main_images_DNS-Security.jpg');">
+                <section data-background-image="https://i-techsupport.com/wp-content/uploads/2025/10/1673000579_main_images_DNS-Security.jpg">
                     <h3>Monitorea Actividades</h3>
                     <p>Logs y SIEM para anomalías.</p>
                 </section>
-                <section style="background-image: url('https://www.idmworks.com/wp-content/uploads/2024/09/IDMW_Blog-PAM_essential_790x25.jpg');">
+                <section data-background-image="https://www.idmworks.com/wp-content/uploads/2024/09/IDMW_Blog-PAM_essential_790x25.jpg">
                     <h3>Evita Redes Sociales</h3>
                     <p>No publicar info trabajo. Ajusta privacidad.</p>
                 </section>
-                <section style="background-image: url('https://s3.mordorintelligence.com/data-masking-market/data-masking-market-1757426797941-major-players.webp');">
+                <section data-background-image="https://s3.mordorintelligence.com/data-masking-market/data-masking-market-1757426797941-major-players.webp">
                     <h3>Dispositivos Perdidos</h3>
                     <p>Reporta inmediatamente. Borrado remoto.</p>
                 </section>
-                <section style="background-image: url('https://tbmpayroll.com/hubfs/regulatory-risks-hr-helps-to-avoid.jpg');">
+                <section data-background-image="https://tbmpayroll.com/hubfs/regulatory-risks-hr-helps-to-avoid.jpg">
                     <h3>Auditorías Regulares</h3>
                     <p>Revisa accesos y permisos. Cumple LFPDPPP.</p>
                 </section>
             </section>
 
             <section>
-                <section style="background-image: url('https://business.privacybee.com/wp-content/uploads/2023/12/image-from-rawpixel-id-5918966-jpeg.jpg');">
+                <section data-background-image="https://business.privacybee.com/wp-content/uploads/2023/12/image-from-rawpixel-id-5918966-jpeg.jpg">
                     <h2>Sección 5: Información Sensible</h2>
                     <p>Roles de alto riesgo.</p>
                 </section>
-                <section style="background-image: url('https://cdn.outrank.so/0d43aa65-9f35-496c-be5b-b2d6a4fe2ac6/ce6ea287-081c-487f-84ff-abf0e511a7ef.jpg');">
+                <section data-background-image="https://cdn.outrank.so/0d43aa65-9f35-496c-be5b-b2d6a4fe2ac6/ce6ea287-081c-487f-84ff-abf0e511a7ef.jpg">
                     <h3>Menor Privilegio</h3>
                     <p>Acceso solo necesario y temporal.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-4.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-4.jpg">
                     <h3>Logs de Accesos</h3>
                     <p>Registra y revisa regularmente.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-2.png');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-2.png">
                     <h3>Datos de Clientes</h3>
                     <p>Anonimiza. No copies a personales.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
                     <h3>Salarios y HR</h3>
                     <p>Sistemas encriptados. No discutir en común.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-4.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-4.jpg">
                     <h3>Compliance</h3>
                     <p>LFPDPPP, PCI-DSS, CNBV. Certifícate.</p>
                 </section>
-                <section style="background-image: url('https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg');">
+                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
                     <h3>Respuesta Incidentes</h3>
                     <p>Notifica afectados e INAI (72 h riesgos altos).</p>
                 </section>
-                <section style="background-image: url('https://i-techsupport.com/wp-content/uploads/2025/10/1673000579_main_images_DNS-Security.jpg');">
+                <section data-background-image="https://i-techsupport.com/wp-content/uploads/2025/10/1673000579_main_images_DNS-Security.jpg">
                     <h3>DLP</h3>
                     <p>Bloquea fugas automáticas. Microsoft 365 DLP.</p>
                 </section>
-                <section style="background-image: url('https://www.idmworks.com/wp-content/uploads/2024/09/IDMW_Blog-PAM_essential_790x25.jpg');">
+                <section data-background-image="https://www.idmworks.com/wp-content/uploads/2024/09/IDMW_Blog-PAM_essential_790x25.jpg">
                     <h3>Evaluaciones Riesgo</h3>
                     <p>Revisiones periódicas. Frameworks NIST.</p>
                 </section>
             </section>
 
-            <section style="background-image: url('https://s3.mordorintelligence.com/global-defense-cyber-security-markets-industry/global-defense-cyber-security-markets-industry-Defense-Cyber-Security-Market-Market-Share-by-Component-2025-1768469588478.webp');">
+            <section data-background-image="https://s3.mordorintelligence.com/global-defense-cyber-security-markets-industry/global-defense-cyber-security-markets-industry-Defense-Cyber-Security-Market-Market-Share-by-Component-2025-1768469588478.webp">
                 <h2>Conclusión</h2>
                 <p>La seguridad es responsabilidad de todos.</p>
-                <a href="quiz.html" style="color:#fff; background:#007bff; padding:10px 20px; border-radius:5px; text-decoration:none;">Ir a Evaluación</a>
+                <a href="quiz.html" style="color:#fff; background:#007bff; padding:12px 24px; border-radius:6px; text-decoration:none;">Ir a Evaluación</a>
             </section>
         </div>
     </div>
@@ -213,7 +213,12 @@
     <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.min.js"></script>
     <script>
         Reveal.initialize({
-            plugins: [ RevealMenu ],
+            controls: true,
+            progress: true,
+            slideNumber: true,
+            overview: false,
+            transition: 'slide',
+            backgroundTransition: 'fade',
             menu: { side: 'left', openButton: false, openSlideNumber: true, markers: true }
         });
     </script>
