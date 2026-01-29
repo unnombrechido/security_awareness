@@ -2,68 +2,640 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Evaluación de Seguridad de la Información</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        form { max-width: 600px; margin: auto; }
-        label { display: block; margin: 10px 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        .quiz-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .question-slide {
+            display: none;
+            width: 100%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            color: #333;
+        }
+        
+        .question-slide.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .question-number {
+            color: #007bff;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .question-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+        
+        .answer-option {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .answer-option:hover {
+            background: #e9ecef;
+            border-color: #007bff;
+            transform: translateX(5px);
+        }
+        
+        .answer-option input[type="radio"] {
+            margin-right: 1rem;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .answer-option.selected {
+            background: #cfe2ff;
+            border-color: #007bff;
+        }
+        
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+        
+        .btn-quiz {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .btn-prev {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-prev:hover {
+            background: #5a6268;
+        }
+        
+        .btn-next, .btn-submit {
+            background: #007bff;
+            color: white;
+        }
+        
+        .btn-next:hover, .btn-submit:hover {
+            background: #0056b3;
+        }
+        
+        .btn-quiz:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Results page */
+        .results-container {
+            display: none;
+            width: 100%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            color: #333;
+            text-align: center;
+        }
+        
+        .results-container.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        .score-display {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 2rem 0;
+        }
+        
+        .score-pass {
+            color: #28a745;
+        }
+        
+        .score-fail {
+            color: #dc3545;
+        }
+        
+        .certificate {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            border: 5px solid #f8f9fa;
+        }
+        
+        .certificate h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .certificate-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-action {
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            margin: 0.5rem;
+        }
+        
+        .btn-retake {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .btn-retake:hover {
+            background: #e0a800;
+        }
+        
+        .btn-course {
+            background: #17a2b8;
+            color: white;
+        }
+        
+        .btn-course:hover {
+            background: #138496;
+        }
+        
+        /* Progress indicator */
+        .progress-bar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: #28a745;
+            transition: width 0.3s;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+            
+            .question-slide, .results-container {
+                padding: 1.5rem;
+            }
+            
+            .question-text {
+                font-size: 1.2rem;
+            }
+            
+            .answer-option {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .btn-quiz {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .score-display {
+                font-size: 2rem;
+            }
+            
+            .certificate h2 {
+                font-size: 1.5rem;
+            }
+            
+            .quiz-navigation {
+                flex-direction: column;
+            }
+            
+            .btn-action {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+                display: block;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Autoevaluación (2-5 minutos)</h1>
-    <form id="quizForm">
-        <p>1. ¿Qué hace una contraseña fuerte?</p>
-        <label><input type="radio" name="q1" value="a"> a) Al menos 8 caracteres solo con letras.</label>
-        <label><input type="radio" name="q1" value="b"> b) Al menos 12 caracteres, mezcla de mayúsculas, minúsculas, números y símbolos.</label>
-        <label><input type="radio" name="q1" value="c"> c) Tu fecha de nacimiento.</label>
-        <label><input type="radio" name="q1" value="d"> d) La misma para todas las cuentas.</label>
-
-        <p>2. ¿Cómo previenes phishing en el correo electrónico?</p>
-        <label><input type="radio" name="q2" value="a"> a) Abres todos los adjuntos para verificar.</label>
-        <label><input type="radio" name="q2" value="b"> b) Verifica remitentes, no abras adjuntos o enlaces sospechosos, reporta emails dudosos.</label>
-        <label><input type="radio" name="q2" value="c"> c) Ignoras los emails de desconocidos.</label>
-        <label><input type="radio" name="q2" value="d"> d) Compartes credenciales si lo piden.</label>
-
-        <p>3. Para datos sensibles, ¿qué es el principio de "menor privilegio"?</p>
-        <label><input type="radio" name="q3" value="a"> a) Acceso ilimitado para todos los empleados.</label>
-        <label><input type="radio" name="q3" value="b"> b) Acceso solo a la información necesaria para tu rol y por el tiempo requerido.</label>
-        <label><input type="radio" name="q3" value="c"> c) Compartir datos con colegas sin restricciones.</label>
-        <label><input type="radio" name="q3" value="d"> d) Ignorar logs de accesos.</label>
-
-        <p>4. ¿Qué debes hacer con documentos físicos confidenciales al final del día?</p>
-        <label><input type="radio" name="q4" value="a"> a) Dejarlos en el escritorio para mañana.</label>
-        <label><input type="radio" name="q4" value="b"> b) Almacenarlos en gabinetes cerrados, implementar política de escritorio limpio y triturar al desechar.</label>
-        <label><input type="radio" name="q4" value="c"> c) Compartirlos con el equipo.</label>
-        <label><input type="radio" name="q4" value="d"> d) Tirarlos a la basura normal.</label>
-
-        <p>5. ¿Por qué y cómo bloquear tu pantalla?</p>
-        <label><input type="radio" name="q5" value="a"> a) Para ahorrar energía; usa el botón de apagado.</label>
-        <label><input type="radio" name="q5" value="b"> b) Para prevenir accesos no autorizados; usa atajos como Ctrl+Alt+Del cuando te alejes.</label>
-        <label><input type="radio" name="q5" value="c"> c) Solo en casa; no es necesario en la oficina.</label>
-        <label><input type="radio" name="q5" value="d"> d) Bloquea solo si alguien te lo pide.</label>
-
-        <p>6. ¿Qué regulación mexicana principal aplica a la protección de datos personales?</p>
-        <label><input type="radio" name="q6" value="a"> a) GDPR.</label>
-        <label><input type="radio" name="q6" value="b"> b) HIPAA.</label>
-        <label><input type="radio" name="q6" value="c"> c) LFPDPPP (Ley Federal de Protección de Datos Personales en Posesión de los Particulares).</label>
-        <label><input type="radio" name="q6" value="d"> d) PCI-DSS.</label>
-
-        <button type="button" onclick="submitQuiz()">Enviar</button>
-    </form>
-    <div id="result"></div>
+    <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+    
+    <div class="quiz-container">
+        <!-- Question 1 -->
+        <div class="question-slide active" data-question="1">
+            <div class="question-number">Pregunta 1 de 6</div>
+            <div class="question-text">¿Qué hace una contraseña fuerte?</div>
+            <label class="answer-option">
+                <input type="radio" name="q1" value="a">
+                <span>Al menos 8 caracteres solo con letras.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q1" value="b">
+                <span>Al menos 12 caracteres, mezcla de mayúsculas, minúsculas, números y símbolos.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q1" value="c">
+                <span>Tu fecha de nacimiento.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q1" value="d">
+                <span>La misma para todas las cuentas.</span>
+            </label>
+            <div class="quiz-navigation">
+                <button class="btn-quiz btn-prev" onclick="previousQuestion()" disabled>Anterior</button>
+                <button class="btn-quiz btn-next" onclick="nextQuestion()">Siguiente</button>
+            </div>
+        </div>
+        
+        <!-- Question 2 -->
+        <div class="question-slide" data-question="2">
+            <div class="question-number">Pregunta 2 de 6</div>
+            <div class="question-text">¿Cómo previenes phishing en el correo electrónico?</div>
+            <label class="answer-option">
+                <input type="radio" name="q2" value="a">
+                <span>Abres todos los adjuntos para verificar.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q2" value="b">
+                <span>Verifica remitentes, no abras adjuntos o enlaces sospechosos, reporta emails dudosos.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q2" value="c">
+                <span>Ignoras los emails de desconocidos.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q2" value="d">
+                <span>Compartes credenciales si lo piden.</span>
+            </label>
+            <div class="quiz-navigation">
+                <button class="btn-quiz btn-prev" onclick="previousQuestion()">Anterior</button>
+                <button class="btn-quiz btn-next" onclick="nextQuestion()">Siguiente</button>
+            </div>
+        </div>
+        
+        <!-- Question 3 -->
+        <div class="question-slide" data-question="3">
+            <div class="question-number">Pregunta 3 de 6</div>
+            <div class="question-text">Para datos sensibles, ¿qué es el principio de "menor privilegio"?</div>
+            <label class="answer-option">
+                <input type="radio" name="q3" value="a">
+                <span>Acceso ilimitado para todos los empleados.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q3" value="b">
+                <span>Acceso solo a la información necesaria para tu rol y por el tiempo requerido.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q3" value="c">
+                <span>Compartir datos con colegas sin restricciones.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q3" value="d">
+                <span>Ignorar logs de accesos.</span>
+            </label>
+            <div class="quiz-navigation">
+                <button class="btn-quiz btn-prev" onclick="previousQuestion()">Anterior</button>
+                <button class="btn-quiz btn-next" onclick="nextQuestion()">Siguiente</button>
+            </div>
+        </div>
+        
+        <!-- Question 4 -->
+        <div class="question-slide" data-question="4">
+            <div class="question-number">Pregunta 4 de 6</div>
+            <div class="question-text">¿Qué debes hacer con documentos físicos confidenciales al final del día?</div>
+            <label class="answer-option">
+                <input type="radio" name="q4" value="a">
+                <span>Dejarlos en el escritorio para mañana.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q4" value="b">
+                <span>Almacenarlos en gabinetes cerrados, implementar política de escritorio limpio y triturar al desechar.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q4" value="c">
+                <span>Compartirlos con el equipo.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q4" value="d">
+                <span>Tirarlos a la basura normal.</span>
+            </label>
+            <div class="quiz-navigation">
+                <button class="btn-quiz btn-prev" onclick="previousQuestion()">Anterior</button>
+                <button class="btn-quiz btn-next" onclick="nextQuestion()">Siguiente</button>
+            </div>
+        </div>
+        
+        <!-- Question 5 -->
+        <div class="question-slide" data-question="5">
+            <div class="question-number">Pregunta 5 de 6</div>
+            <div class="question-text">¿Por qué y cómo bloquear tu pantalla?</div>
+            <label class="answer-option">
+                <input type="radio" name="q5" value="a">
+                <span>Para ahorrar energía; usa el botón de apagado.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q5" value="b">
+                <span>Para prevenir accesos no autorizados; usa atajos como Ctrl+Alt+Del cuando te alejes.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q5" value="c">
+                <span>Solo en casa; no es necesario en la oficina.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q5" value="d">
+                <span>Bloquea solo si alguien te lo pide.</span>
+            </label>
+            <div class="quiz-navigation">
+                <button class="btn-quiz btn-prev" onclick="previousQuestion()">Anterior</button>
+                <button class="btn-quiz btn-next" onclick="nextQuestion()">Siguiente</button>
+            </div>
+        </div>
+        
+        <!-- Question 6 -->
+        <div class="question-slide" data-question="6">
+            <div class="question-number">Pregunta 6 de 6</div>
+            <div class="question-text">¿Qué regulación mexicana principal aplica a la protección de datos personales?</div>
+            <label class="answer-option">
+                <input type="radio" name="q6" value="a">
+                <span>GDPR.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q6" value="b">
+                <span>HIPAA.</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q6" value="c">
+                <span>LFPDPPP (Ley Federal de Protección de Datos Personales en Posesión de los Particulares).</span>
+            </label>
+            <label class="answer-option">
+                <input type="radio" name="q6" value="d">
+                <span>PCI-DSS.</span>
+            </label>
+            <div class="quiz-navigation">
+                <button class="btn-quiz btn-prev" onclick="previousQuestion()">Anterior</button>
+                <button class="btn-quiz btn-submit" onclick="submitQuiz()">Enviar Respuestas</button>
+            </div>
+        </div>
+        
+        <!-- Results -->
+        <div class="results-container" id="results">
+            <div id="resultsContent"></div>
+        </div>
+    </div>
+    
     <script>
-        function submitQuiz() {
-            const answers = { q1: 'b', q2: 'b', q3: 'b', q4: 'b', q5: 'b', q6: 'c' };
-            let score = 0;
-            for (let i = 1; i <= 6; i++) {
-                const selected = document.querySelector(`input[name="q${i}"]:checked`);
-                if (selected && selected.value === answers[`q${i}`]) score++;
-            }
-            document.getElementById('result').innerHTML = `<h2>Puntuación: ${score}/6</h2><p>Si sacaste menos de 5, revisa el curso nuevamente.</p>`;
+        let currentQuestion = 1;
+        const totalQuestions = 6;
+        const correctAnswers = { q1: 'b', q2: 'b', q3: 'b', q4: 'b', q5: 'b', q6: 'c' };
+        let userAnswers = {};
+        
+        // Admin configurable settings
+        const MAX_ATTEMPTS = 3; // Change this value to set maximum retake attempts
+        let attemptNumber = 1;
+        
+        // Initialize
+        document.querySelectorAll('.answer-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+                
+                // Remove selected class from all options in this question
+                this.closest('.question-slide').querySelectorAll('.answer-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to this option
+                this.classList.add('selected');
+                
+                // Save answer
+                userAnswers[radio.name] = radio.value;
+                updateProgress();
+            });
+        });
+        
+        function updateProgress() {
+            const answered = Object.keys(userAnswers).length;
+            const progress = (answered / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
         }
+        
+        function showQuestion(questionNum) {
+            document.querySelectorAll('.question-slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            const questionSlide = document.querySelector(`.question-slide[data-question="${questionNum}"]`);
+            if (questionSlide) {
+                questionSlide.classList.add('active');
+            }
+            
+            currentQuestion = questionNum;
+            
+            // Update button states
+            const prevBtn = questionSlide.querySelector('.btn-prev');
+            const nextBtn = questionSlide.querySelector('.btn-next');
+            
+            if (prevBtn) {
+                prevBtn.disabled = currentQuestion === 1;
+            }
+        }
+        
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                showQuestion(currentQuestion + 1);
+            }
+        }
+        
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                showQuestion(currentQuestion - 1);
+            }
+        }
+        
+        function submitQuiz() {
+            // Check if all questions are answered
+            if (Object.keys(userAnswers).length < totalQuestions) {
+                alert('Por favor responde todas las preguntas antes de enviar.');
+                return;
+            }
+            
+            // Calculate score
+            let score = 0;
+            for (let i = 1; i <= totalQuestions; i++) {
+                const qKey = `q${i}`;
+                if (userAnswers[qKey] === correctAnswers[qKey]) {
+                    score++;
+                }
+            }
+            
+            const percentage = (score / totalQuestions) * 100;
+            const passed = score >= 5; // 5 out of 6 to pass
+            
+            // Hide questions
+            document.querySelectorAll('.question-slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Show results
+            const resultsContainer = document.getElementById('results');
+            const resultsContent = document.getElementById('resultsContent');
+            
+            if (passed) {
+                resultsContent.innerHTML = `
+                    <div class="certificate">
+                        <div class="certificate-icon">🏆</div>
+                        <h2>¡Felicidades!</h2>
+                        <p>Has completado exitosamente el curso de Seguridad de la Información</p>
+                    </div>
+                    <div class="score-display score-pass">${score}/${totalQuestions}</div>
+                    <p style="font-size: 1.2rem; margin: 1rem 0;">
+                        Porcentaje: ${percentage.toFixed(0)}%
+                    </p>
+                    <p style="font-size: 1rem; color: #666; margin: 2rem 0;">
+                        Has demostrado un excelente conocimiento de los principios básicos de seguridad de la información.
+                    </p>
+                    <button class="btn-action btn-course" onclick="window.location.href='course.html'">
+                        Volver al Curso
+                    </button>
+                `;
+            } else {
+                const attemptsRemaining = MAX_ATTEMPTS - attemptNumber;
+                const canRetake = attemptNumber < MAX_ATTEMPTS;
+                
+                let retakeButton = '';
+                let attemptsMessage = '';
+                
+                if (canRetake) {
+                    retakeButton = `
+                        <button class="btn-action btn-retake" onclick="retakeQuiz()">
+                            Reintentar Evaluación
+                        </button>
+                    `;
+                    attemptsMessage = `<p style="font-size: 0.9rem; color: #ffc107; margin: 1rem 0;">
+                        Intentos restantes: ${attemptsRemaining} de ${MAX_ATTEMPTS}
+                    </p>`;
+                } else {
+                    attemptsMessage = `<p style="font-size: 1rem; color: #dc3545; margin: 1rem 0; font-weight: bold;">
+                        Has alcanzado el número máximo de intentos (${MAX_ATTEMPTS}).
+                    </p>`;
+                }
+                
+                resultsContent.innerHTML = `
+                    <div class="score-display score-fail">${score}/${totalQuestions}</div>
+                    <h2 style="color: #dc3545; margin: 1rem 0;">Necesitas Mejorar</h2>
+                    <p style="font-size: 1.2rem; margin: 1rem 0;">
+                        Porcentaje: ${percentage.toFixed(0)}%
+                    </p>
+                    ${attemptsMessage}
+                    <p style="font-size: 1rem; color: #666; margin: 2rem 0;">
+                        Necesitas al menos 5 respuestas correctas para aprobar. Te recomendamos revisar el curso nuevamente.
+                    </p>
+                    <button class="btn-action btn-course" onclick="window.location.href='course.html'">
+                        Revisar el Curso
+                    </button>
+                    ${retakeButton}
+                `;
+            }
+            
+            resultsContainer.classList.add('active');
+            document.getElementById('progressBar').style.width = '100%';
+        }
+        
+        function retakeQuiz() {
+            // Check if max attempts reached
+            if (attemptNumber >= MAX_ATTEMPTS) {
+                alert('Has alcanzado el número máximo de intentos permitidos.');
+                return;
+            }
+            
+            // Increment attempt counter
+            attemptNumber++;
+            
+            // Reset answers
+            userAnswers = {};
+            currentQuestion = 1;
+            
+            // Clear all selections
+            document.querySelectorAll('.answer-option').forEach(option => {
+                option.classList.remove('selected');
+                const radio = option.querySelector('input[type="radio"]');
+                if (radio) radio.checked = false;
+            });
+            
+            // Hide results
+            document.getElementById('results').classList.remove('active');
+            
+            // Show first question
+            showQuestion(1);
+            updateProgress();
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('results').classList.contains('active')) return;
+            
+            if (e.key === 'ArrowRight' && currentQuestion < totalQuestions) {
+                nextQuestion();
+            } else if (e.key === 'ArrowLeft' && currentQuestion > 1) {
+                previousQuestion();
+            }
+        });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
 </body>
 </html>
