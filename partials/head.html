@@ -240,7 +240,7 @@
             .custom-slide > div[style*="grid-template-columns"] {
                 display: flex !important;
                 flex-direction: column !important;
-                padding: 4rem 0 0.5rem 0 !important;
+                padding: 8rem 0 0.5rem 0 !important;
                 overflow-y: auto !important;
                 gap: 0 !important;
             }
@@ -305,30 +305,36 @@
             }
             
             /* Section titles - fixed positioning at top below menu */
-            .custom-slide[data-slide="1"] > div[style*="position: absolute"],
-            .custom-slide[data-slide="2"] > div[style*="position: absolute"],
-            .custom-slide[data-slide="3"] > div[style*="position: absolute"],
-            .custom-slide[data-slide="4"] > div[style*="position: absolute"],
-            .custom-slide[data-slide="5"] > div[style*="position: absolute"] {
+            .custom-slide[data-slide="1"] > div[style*="position:absolute"],
+            .custom-slide[data-slide="2"] > div[style*="position:absolute"],
+            .custom-slide[data-slide="3"] > div[style*="position:absolute"],
+            .custom-slide[data-slide="4"] > div[style*="position:absolute"],
+            .custom-slide[data-slide="5"] > div[style*="position:absolute"] {
                 position: fixed !important;
                 top: 50px !important;
                 left: 0 !important;
                 right: 0 !important;
                 transform: none !important;
-                width: 100% !important;
+                width: 100vw !important;
+                max-width: 100vw !important;
                 margin: 0 !important;
-                padding: 0.6rem 1rem !important;
+                padding: 0.8rem 1.5rem !important;
                 z-index: 2900 !important;
                 background: rgba(0, 0, 0, 0.90) !important;
+                border-radius: 0 !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
             }
             
-            .custom-slide[data-slide="1"] > div[style*="position: absolute"] h2,
-            .custom-slide[data-slide="2"] > div[style*="position: absolute"] h2,
-            .custom-slide[data-slide="3"] > div[style*="position: absolute"] h2,
-            .custom-slide[data-slide="4"] > div[style*="position: absolute"] h2,
-            .custom-slide[data-slide="5"] > div[style*="position: absolute"] h2 {
+            .custom-slide[data-slide="1"] > div[style*="position:absolute"] h2,
+            .custom-slide[data-slide="2"] > div[style*="position:absolute"] h2,
+            .custom-slide[data-slide="3"] > div[style*="position:absolute"] h2,
+            .custom-slide[data-slide="4"] > div[style*="position:absolute"] h2,
+            .custom-slide[data-slide="5"] > div[style*="position:absolute"] h2 {
                 font-size: 1.1rem !important;
                 margin: 0 !important;
+                line-height: 1.4 !important;
+                text-align: center !important;
             }
             
             /* Background images for slides - better mobile scaling */
@@ -425,20 +431,20 @@
                 font-size: 0.85rem !important;
             }
             
-            .custom-slide[data-slide="1"] > div[style*="position: absolute"],
-            .custom-slide[data-slide="2"] > div[style*="position: absolute"],
-            .custom-slide[data-slide="3"] > div[style*="position: absolute"],
-            .custom-slide[data-slide="4"] > div[style*="position: absolute"],
-            .custom-slide[data-slide="5"] > div[style*="position: absolute"] {
+            .custom-slide[data-slide="1"] > div[style*="position:absolute"],
+            .custom-slide[data-slide="2"] > div[style*="position:absolute"],
+            .custom-slide[data-slide="3"] > div[style*="position:absolute"],
+            .custom-slide[data-slide="4"] > div[style*="position:absolute"],
+            .custom-slide[data-slide="5"] > div[style*="position:absolute"] {
                 top: 45px !important;
                 padding: 0.5rem 0.8rem !important;
             }
             
-            .custom-slide[data-slide="1"] > div[style*="position: absolute"] h2,
-            .custom-slide[data-slide="2"] > div[style*="position: absolute"] h2,
-            .custom-slide[data-slide="3"] > div[style*="position: absolute"] h2,
-            .custom-slide[data-slide="4"] > div[style*="position: absolute"] h2,
-            .custom-slide[data-slide="5"] > div[style*="position: absolute"] h2 {
+            .custom-slide[data-slide="1"] > div[style*="position:absolute"] h2,
+            .custom-slide[data-slide="2"] > div[style*="position:absolute"] h2,
+            .custom-slide[data-slide="3"] > div[style*="position:absolute"] h2,
+            .custom-slide[data-slide="4"] > div[style*="position:absolute"] h2,
+            .custom-slide[data-slide="5"] > div[style*="position:absolute"] h2 {
                 font-size: 0.95rem !important;
             }
             
