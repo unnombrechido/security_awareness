@@ -1,233 +1,161 @@
-    <div class="reveal">
-        <div class="slides">
-            <section data-background-image="https://cdn.prod.website-files.com/643507075046cf6dcb169402/67298d38aeb5b94db6e477f6_diploma-cyber-security-671ed6ef14adb.webp">
-                <h1>Curso de Seguridad de la Información</h1>
-                <p>Selecciona tema para explorar.</p>
-            </section>
+    <!-- Custom content layout with full viewport styling -->
+    <div id="custom-slides-container" style="position:absolute;top:44px;left:0;width:100vw;height:calc(100vh - 44px);overflow:hidden;">
+            <div class="custom-slide" data-slide="0" style="display:flex;flex-direction:column;justify-content:center;align-items:center;width:100vw;height:calc(100vh - 44px);background:url('https://cdn.prod.website-files.com/643507075046cf6dcb169402/67298d38aeb5b94db6e477f6_diploma-cyber-security-671ed6ef14adb.webp') center/cover;position:relative;">
+                <div style="background:rgba(0,0,0,0.8);padding:3rem;border-radius:1rem;text-align:center;">
+                    <h1 style="color:#fff;font-size:3rem;margin-bottom:1rem;">Curso de Seguridad de la Información</h1>
+                    <p style="color:#fff;font-size:1.5rem;">Selecciona tema para explorar.</p>
+                </div>
+            </div>
 
-            <section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2024/02/6-document-redaction-duplicate.png">
-                    <h2>Sección 1: Principios Básicos</h2>
-                    <div class="topic-grid">
-                        <a class="topic-link" href="#/1/1">Confidencialidad</a>
-                        <a class="topic-link" href="#/1/2">Integridad</a>
-                        <a class="topic-link" href="#/1/3">Disponibilidad</a>
-                        <a class="topic-link" href="#/1/4">Clasifica Información</a>
-                        <a class="topic-link" href="#/1/5">Necesidad de Saber</a>
-                        <a class="topic-link" href="#/1/6">Reporta Incidentes</a>
-                        <a class="topic-link" href="#/1/7">Actualiza Dispositivos</a>
-                    </div>
-                </section>
-                <section data-background-image="https://emediaai.com/wp-content/uploads/2024/02/ai-for-the-cso.png">
-                    <h3>Confidencialidad</h3>
-                    <p>Protege datos de accesos no autorizados. Ejemplo: Encriptar emails sensibles.</p>
-                    <p>En México, alineado con LFPDPPP.</p>
-                </section>
-                <section data-background-image="https://www.coresite.com/hubfs/blog%20images/body/Uptime%20reports/Outage%20causes%20smaller.jpg">
-                    <h3>Integridad</h3>
-                    <p>Asegura datos no alterados. Usa checksums o firmas digitales.</p>
-                    <p>Previene fraudes en registros financieros.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2024/02/2-rules-how-to-redact-documents.png">
-                    <h3>Disponibilidad</h3>
-                    <p>Garantiza acceso cuando sea necesario. Backups y recuperación.</p>
-                    <p>En PYMEs, evita pérdidas por downtime.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-4.jpg">
-                    <h3>Clasifica la Información</h3>
-                    <p>Públicos, internos, confidenciales, restringidos. Etiqueta documentos.</p>
-                    <p>Datos personales protegidos por LFPDPPP.</p>
-                </section>
-                <section data-background-image="https://cdn.outrank.so/0d43aa65-9f35-496c-be5b-b2d6a4fe2ac6/4e11dd2b-2a96-4768-b814-7661e6388353.jpg">
-                    <h3>Necesidad de Saber</h3>
-                    <p>Accede solo a lo esencial para tu rol. Implementa RBAC.</p>
-                </section>
-                <section data-background-image="https://lh7-us.googleusercontent.com/wNlC-aD1Sjz3NfNkcprQe9J1klhyGgqRgrMWZ1jGSr7oPsCPJVsgo0viX5R6pM9K6e_kFe_9DWFLaAbCoJWvwoPHaLmyZe7xUuyOKCn93w8wZJnrJ9Ex0MatYkBW3c7Dw01KxwVeq_RRY7vGqr2tHWY">
-                    <h3>Reporta Incidentes</h3>
-                    <p>Notifica a TI inmediatamente. INAI en 72 h si datos personales.</p>
-                </section>
-                <section data-background-image="https://www.financestrategists.com/uploads/Safety-and-Security-Measures.png">
-                    <h3>Actualiza Dispositivos</h3>
-                    <p>Parches mensuales. Automatiza con WSUS o MDM.</p>
-                </section>
-            </section>
+            <div class="custom-slide" data-slide="1" style="display:none;width:100vw;height:calc(100vh - 44px);background:url('https://sharevault.com/wp-content/uploads/2024/02/6-document-redaction-duplicate.png') center/cover;position:relative;padding:0;margin:0;">
+                <div style="position:absolute;top:1rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(0,0,0,0.9);padding:1rem 2rem;border-radius:0.5rem;">
+                    <h2 style="color:#fff;margin:0;">Sección 1: Principios Básicos</h2>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1.2fr 1fr;width:100%;height:100%;gap:0;padding:5rem 0 1rem 0;box-sizing:border-box;">
+                  <div style="display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:1.5rem;height:100%;padding:2vw 1vw 2vw 2vw;">
+                    <button class="topic-link" data-topic="confidencialidad" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Confidencialidad</button>
+                    <button class="topic-link" data-topic="integridad" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Integridad</button>
+                    <button class="topic-link" data-topic="disponibilidad" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Disponibilidad</button>
+                    <button class="topic-link" data-topic="clasifica" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Clasifica Información</button>
+                  </div>
+                  <div id="section1-content" style="background:rgba(255,255,255,0.9);height:100%;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2vw;border-radius:1rem;box-shadow:0 0 24px #0005;color:#000;">
+                    <h3 style="color:#000;font-size:1.8rem;text-align:center;">Selecciona un tema para ver detalles</h3>
+                  </div>
+                  <div style="display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:1.5rem;height:100%;padding:2vw 2vw 2vw 1vw;">
+                    <button class="topic-link" data-topic="necesidad" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Necesidad de Saber</button>
+                    <button class="topic-link" data-topic="reporta" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Reporta Incidentes</button>
+                    <button class="topic-link" data-topic="actualiza" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Actualiza Dispositivos</button>
+                  </div>
+                </div>
+            </div>
 
-            <section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-3.jpg">
-                    <h2>Sección 2: Gestión de Contraseñas</h2>
-                    <div class="topic-grid">
-                        <a class="topic-link" href="#/2/1">Contraseñas Complejas</a>
-                        <a class="topic-link" href="#/2/2">No Reutilizar</a>
-                        <a class="topic-link" href="#/2/3">2FA</a>
-                        <a class="topic-link" href="#/2/4">Gestores de Contraseñas</a>
-                        <a class="topic-link" href="#/2/5">Cambio Periódico</a>
-                        <a class="topic-link" href="#/2/6">No Compartir</a>
-                    </div>
-                </section>
-                <section data-background-image="https://lh7-us.googleusercontent.com/bdmwlU6BO4Wh5wlOcHUwaSN7cDoED1v1lDmVufJvycP9vvKLTuFWqq1Wf0FRQLaNPGQhxo1n43CvJJQyvdKrpcuIQYVSCX5Rqe3sodghJM5JJQCW3gHMkqb2geInFm17N3dyXMBM8J6Xi_EASo81jl4">
-                    <h3>Contraseñas Complejas</h3>
-                    <p>12+ caracteres, mix. Ej: "P@ssw0rdSegura2023!". Evita brute force.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-3.png">
-                    <h3>No Reutilizar</h3>
-                    <p>Una única por cuenta. Monitorea brechas en Have I Been Pwned.</p>
-                </section>
-                <section data-background-image="https://bhirst.media/wp-content/uploads/2023/05/smartmockups_kp5sef9y-1536x963-1.webp">
-                    <h3>2FA</h3>
-                    <p>Activa 2FA siempre. Ejemplo: Código SMS o app.</p>
-                    <p>Segundo factor bloquea accesos robados.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-1.jpg">
-                    <h3>Gestores de Contraseñas</h3>
-                    <p>LastPass, Bitwarden. Genera y almacena seguras.</p>
-                </section>
-                <section data-background-image="https://www.grsprotection.com/wp-content/uploads/2023/11/busy-corporate-office-environment-scaled.jpg">
-                    <h3>Cambio Periódico</h3>
-                    <p>Cambia cada 90 días, inmediatamente tras incidente.</p>
-                    <p>Automatiza recordatorios.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/01/HERO-Why-Document-Control-Software-is-Essential-for-Your-Business-Success-new-size.png">
-                    <h3>No Compartir</h3>
-                    <p>Nunca por email/chat. Usa compartición segura.</p>
-                    <p>Riesgo: Fugas accidentales.</p>
-                </section>
-            </section>
+            <!-- Slide 2: Section 2 -->
+            <div class="custom-slide" data-slide="2" style="display:none;width:100vw;height:calc(100vh - 44px);background:url('https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-3.jpg') center/cover;position:relative;padding:0;margin:0;">
+                <div style="position:absolute;top:1rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(0,0,0,0.9);padding:1rem 2rem;border-radius:0.5rem;">
+                    <h2 style="color:#fff;margin:0;">Sección 2: Gestión de Contraseñas</h2>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1.2fr 1fr;width:100%;height:100%;gap:0;padding:5rem 0 1rem 0;box-sizing:border-box;">
+                  <div style="display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:1.5rem;height:100%;padding:2vw 1vw 2vw 2vw;">
+                    <button class="topic-link" data-topic="complejas" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Contraseñas Complejas</button>
+                    <button class="topic-link" data-topic="noreutilizar" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">No Reutilizar</button>
+                    <button class="topic-link" data-topic="2fa" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">2FA</button>
+                  </div>
+                  <div id="section2-content" style="background:rgba(255,255,255,0.9);height:100%;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2vw;border-radius:1rem;box-shadow:0 0 24px #0005;color:#000;">
+                    <h3 style="color:#000;font-size:1.8rem;text-align:center;">Selecciona un tema para ver detalles</h3>
+                  </div>
+                  <div style="display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:1.5rem;height:100%;padding:2vw 2vw 2vw 1vw;">
+                    <button class="topic-link" data-topic="gestores" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Gestores de Contraseñas</button>
+                    <button class="topic-link" data-topic="cambio" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Cambio Periódico</button>
+                    <button class="topic-link" data-topic="nocompartir" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">No Compartir</button>
+                  </div>
+                </div>
+            </div>
 
-            <!-- Sección 3 -->
-            <section>
-                <section data-background-image="https://cleancorps.com/wp-content/uploads/2021/02/Government-office-cleaning.png">
-                    <h2>Sección 3: Políticas en el Lugar de Trabajo</h2>
-                    <div class="topic-grid">
-                        <a class="topic-link" href="#/3/1">Documentos Físicos</a>
-                        <a class="topic-link" href="#/3/2">Escritorio Limpio</a>
-                        <a class="topic-link" href="#/3/3">Bloqueo de Pantallas</a>
-                        <a class="topic-link" href="#/3/4">Uso de Dispositivos</a>
-                        <a class="topic-link" href="#/3/5">Phishing</a>
-                        <a class="topic-link" href="#/3/6">Trabajo Remoto</a>
-                        <a class="topic-link" href="#/3/7">Capacitación Continua</a>
-                    </div>
-                </section>
-                <section data-background-image="https://p0.piqsels.com/preview/553/55/638/technology-hack-hacker-hacking.jpg">
-                    <h3>Documentos Físicos</h3>
-                    <p>Almacena en gabinetes cerrados. Tritura al desechar.</p>
-                </section>
-                <section data-background-image="https://www.julota.com/wp-content/uploads/2025/07/What-is-a-super-utilizer-1024x534.png">
-                    <h3>Escritorio Limpio</h3>
-                    <p>Siempre al alejarte. Guarda documentos, elimina notas.</p>
-                </section>
-                <section data-background-image="https://mindingyourmedia.com/wp-content/uploads/2025/06/Cyber-Security-Services-for-Businesses-Protecting-Your-Future-with-Minding-Your-Media.png">
-                    <h3>Bloqueo de Pantallas</h3>
-                    <p>Ctrl+Alt+Del al alejarte. Auto-bloqueo en 5 min.</p>
-                </section>
-                <section data-background-image="https://lh7-us.googleusercontent.com/bdmwlU6BO4Wh5wlOcHUwaSN7cDoED1v1lDmVufJvycP9vvKLTuFWqq1Wf0FRQLaNPGQhxo1n43CvJJQyvdKrpcuIQYVSCX5Rqe3sodghJM5JJQCW3gHMkqb2geInFm17N3dyXMBM8J6Xi_EASo81jl4">
-                    <h3>Uso de Dispositivos</h3>
-                    <p>No USBs sin verificar. Prohibido personales.</p>
-                </section>
-                <section data-background-image="https://www.overtonsecurity.com/wp-content/uploads/2023/09/Advanced-Training-for-Certification-.jpg">
-                    <h3>Phishing</h3>
-                    <p>Verifica remitente. No abras adjuntos sospechosos.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-2.png">
-                    <h3>Trabajo Remoto</h3>
-                    <p>VPN obligatoria. No discutir sensible en público.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
-                    <h3>Capacitación Continua</h3>
-                    <p>Talleres anuales sobre LFPDPPP y amenazas.</p>
-                </section>
-            </section>
+            <!-- Slide 3: Section 3 -->
+            <div class="custom-slide" data-slide="3" style="display:none;width:100vw;height:calc(100vh - 44px);background:url('https://cleancorps.com/wp-content/uploads/2021/02/Government-office-cleaning.png') center/cover;position:relative;padding:0;margin:0;">
+                <div style="position:absolute;top:1rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(0,0,0,0.9);padding:1rem 2rem;border-radius:0.5rem;">
+                    <h2 style="color:#fff;margin:0;">Sección 3: Políticas en el Lugar de Trabajo</h2>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1.2fr 1fr;width:100%;height:100%;gap:0;padding:5rem 0 1rem 0;box-sizing:border-box;">
+                  <div style="display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:1.5rem;height:100%;padding:2vw 1vw 2vw 2vw;">
+                    <button class="topic-link" data-topic="fisicos" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Documentos Físicos</button>
+                    <button class="topic-link" data-topic="escritorio" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Escritorio Limpio</button>
+                    <button class="topic-link" data-topic="bloqueo" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Bloqueo de Pantallas</button>
+                    <button class="topic-link" data-topic="dispositivos" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Uso de Dispositivos</button>
+                  </div>
+                  <div id="section3-content" style="background:rgba(255,255,255,0.9);height:100%;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2vw;border-radius:1rem;box-shadow:0 0 24px #0005;color:#000;">
+                    <h3 style="color:#000;font-size:1.8rem;text-align:center;">Selecciona un tema para ver detalles</h3>
+                  </div>
+                  <div style="display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:1.5rem;height:100%;padding:2vw 2vw 2vw 1vw;">
+                    <button class="topic-link" data-topic="phishing" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Phishing</button>
+                    <button class="topic-link" data-topic="remoto" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Trabajo Remoto</button>
+                    <button class="topic-link" data-topic="capacitacion" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Capacitación Continua</button>
+                  </div>
+                </div>
+            </div>
 
-            <!-- Sección 4 -->
-            <section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/2024-cyber-attack-breakdown-critical-incidents-and-security-tips-img-4.jpg">
-                    <h2>Sección 4: Protección contra Fugas</h2>
-                    <div class="topic-grid">
-                        <a class="topic-link" href="#/4/1">Encripta Datos</a>
-                        <a class="topic-link" href="#/4/2">Intercambio Controlado</a>
-                        <a class="topic-link" href="#/4/3">Monitorea Actividades</a>
-                        <a class="topic-link" href="#/4/4">Evita Redes Sociales</a>
-                        <a class="topic-link" href="#/4/5">Dispositivos Perdidos</a>
-                        <a class="topic-link" href="#/4/6">Auditorías Regulares</a>
-                    </div>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-4.jpg">
-                    <h3>Encripta Datos</h3>
-                    <p>AES-256 en archivos y correos. Ejemplo: VeraCrypt.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
-                    <h3>Intercambio Controlado</h3>
-                    <p>SharePoint con permisos. Evita email personal.</p>
-                </section>
-                <section data-background-image="https://i-techsupport.com/wp-content/uploads/2025/10/1673000579_main_images_DNS-Security.jpg">
-                    <h3>Monitorea Actividades</h3>
-                    <p>Logs y SIEM para anomalías.</p>
-                </section>
-                <section data-background-image="https://www.idmworks.com/wp-content/uploads/2024/09/IDMW_Blog-PAM_essential_790x25.jpg">
-                    <h3>Evita Redes Sociales</h3>
-                    <p>No publicar info trabajo. Ajusta privacidad.</p>
-                </section>
-                <section data-background-image="https://s3.mordorintelligence.com/data-masking-market/data-masking-market-1757426797941-major-players.webp">
-                    <h3>Dispositivos Perdidos</h3>
-                    <p>Reporta inmediatamente. Borrado remoto.</p>
-                </section>
-                <section data-background-image="https://tbmpayroll.com/hubfs/regulatory-risks-hr-helps-to-avoid.jpg">
-                    <h3>Auditorías Regulares</h3>
-                    <p>Revisa accesos y permisos. Cumple LFPDPPP.</p>
-                </section>
-            </section>
+            <!-- Slide 4: Section 4 -->
+            <div class="custom-slide" data-slide="4" style="display:none;width:100vw;height:calc(100vh - 44px);background:url('https://sharevault.com/wp-content/uploads/2025/05/2024-cyber-attack-breakdown-critical-incidents-and-security-tips-img-4.jpg') center/cover;position:relative;padding:0;margin:0;">
+                <div style="position:absolute;top:1rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(0,0,0,0.9);padding:1rem 2rem;border-radius:0.5rem;">
+                    <h2 style="color:#fff;margin:0;">Sección 4: Protección contra Fugas</h2>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1.2fr 1fr;width:100%;height:100%;gap:0;padding:5rem 0 1rem 0;box-sizing:border-box;">
+                  <div style="display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:1.5rem;height:100%;padding:2vw 1vw 2vw 2vw;">
+                    <button class="topic-link" data-topic="encripta" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Encripta Datos</button>
+                    <button class="topic-link" data-topic="intercambio" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Intercambio Controlado</button>
+                    <button class="topic-link" data-topic="monitorea" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Monitorea Actividades</button>
+                  </div>
+                  <div id="section4-content" style="background:rgba(255,255,255,0.9);height:100%;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2vw;border-radius:1rem;box-shadow:0 0 24px #0005;color:#000;">
+                    <h3 style="color:#000;font-size:1.8rem;text-align:center;">Selecciona un tema para ver detalles</h3>
+                  </div>
+                  <div style="display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:1.5rem;height:100%;padding:2vw 2vw 2vw 1vw;">
+                    <button class="topic-link" data-topic="redes" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Evita Redes Sociales</button>
+                    <button class="topic-link" data-topic="perdidos" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Dispositivos Perdidos</button>
+                    <button class="topic-link" data-topic="auditorias" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Auditorías Regulares</button>
+                  </div>
+                </div>
+            </div>
 
-            <section>
-                <section data-background-image="https://business.privacybee.com/wp-content/uploads/2023/12/image-from-rawpixel-id-5918966-jpeg.jpg">
-                    <h2>Sección 5: Medidas para Información Sensible</h2>
-                    <div class="topic-grid">
-                        <a class="topic-link" href="#/5/1">Acceso Restringido</a>
-                        <a class="topic-link" href="#/5/2">Registro de Actividades</a>
-                        <a class="topic-link" href="#/5/3">Manejo de Datos de Clientes</a>
-                        <a class="topic-link" href="#/5/4">Protección de Salarios</a>
-                        <a class="topic-link" href="#/5/5">Capacitación en Compliance</a>
-                        <a class="topic-link" href="#/5/6">Respuesta a Incidentes</a>
-                        <a class="topic-link" href="#/5/7">Herramientas Avanzadas</a>
-                        <a class="topic-link" href="#/5/8">Evaluaciones de Riesgo</a>
-                    </div>
-                </section>
-                <section data-background-image="https://cdn.outrank.so/0d43aa65-9f35-496c-be5b-b2d6a4fe2ac6/ce6ea287-081c-487f-84ff-abf0e511a7ef.jpg">
-                    <h3>Acceso Restringido</h3>
-                    <p>Menor privilegio: solo necesario y temporal.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-4.jpg">
-                    <h3>Registro de Actividades</h3>
-                    <p>Logs de accesos y revisión regular.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/secure-document-sharing-for-ma-unveiling-the-safest-channels-for-privacy-img-2.png">
-                    <h3>Manejo de Datos de Clientes</h3>
-                    <p>Anonimiza. No copies a personales. Aviso de privacidad.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
-                    <h3>Protección de Salarios</h3>
-                    <p>Sistemas encriptados. No discutir en común.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/top-10-digital-document-handling-mistakes-and-how-to-avoid-them-for-secure-file-sharing-img-4.jpg">
-                    <h3>Capacitación en Compliance</h3>
-                    <p>LFPDPPP, PCI-DSS, CNBV. Certifícate.</p>
-                </section>
-                <section data-background-image="https://sharevault.com/wp-content/uploads/2025/05/how-to-perform-a-complete-security-audit-for-data-management-img-2.jpg">
-                    <h3>Respuesta a Incidentes</h3>
-                    <p>Plan específico. Notifica afectados e INAI (72 h).</p>
-                </section>
-                <section data-background-image="https://i-techsupport.com/wp-content/uploads/2025/10/1673000579_main_images_DNS-Security.jpg">
-                    <h3>Herramientas Avanzadas</h3>
-                    <p>DLP para bloquear fugas. Microsoft 365 DLP.</p>
-                </section>
-                <section data-background-image="https://www.idmworks.com/wp-content/uploads/2024/09/IDMW_Blog-PAM_essential_790x25.jpg">
-                    <h3>Evaluaciones de Riesgo</h3>
-                    <p>Revisiones periódicas. Frameworks NIST.</p>
-                </section>
-            </section>
+            <!-- Slide 5: Section 5 -->
+            <div class="custom-slide" data-slide="5" style="display:none;width:100vw;height:calc(100vh - 44px);background:url('https://business.privacybee.com/wp-content/uploads/2023/12/image-from-rawpixel-id-5918966-jpeg.jpg') center/cover;position:relative;padding:0;margin:0;">
+                <div style="position:absolute;top:1rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(0,0,0,0.9);padding:1rem 2rem;border-radius:0.5rem;">
+                    <h2 style="color:#fff;margin:0;">Sección 5: Medidas para Información Sensible</h2>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1.2fr 1fr;width:100%;height:100%;gap:0;padding:5rem 0 1rem 0;box-sizing:border-box;">
+                  <div style="display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:1.5rem;height:100%;padding:2vw 1vw 2vw 2vw;">
+                    <button class="topic-link" data-topic="acceso" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Acceso Restringido</button>
+                    <button class="topic-link" data-topic="registro" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Registro de Actividades</button>
+                    <button class="topic-link" data-topic="manejo" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Manejo de Datos de Clientes</button>
+                    <button class="topic-link" data-topic="salarios" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Protección de Salarios</button>
+                  </div>
+                  <div id="section5-content" style="background:rgba(255,255,255,0.9);height:100%;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2vw;border-radius:1rem;box-shadow:0 0 24px #0005;color:#000;">
+                    <h3 style="color:#000;font-size:1.8rem;text-align:center;">Selecciona un tema para ver detalles</h3>
+                  </div>
+                  <div style="display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:1.5rem;height:100%;padding:2vw 2vw 2vw 1vw;">
+                    <button class="topic-link" data-topic="compliance" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Capacitación en Compliance</button>
+                    <button class="topic-link" data-topic="respuesta" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Respuesta a Incidentes</button>
+                    <button class="topic-link" data-topic="herramientas" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Herramientas Avanzadas</button>
+                    <button class="topic-link" data-topic="evaluaciones" style="background:rgba(50,50,80,0.9);color:#fff;border:none;padding:1.5rem;border-radius:0.5rem;font-size:1.1rem;cursor:pointer;transition:all 0.2s;">Evaluaciones de Riesgo</button>
+                  </div>
+                </div>
+            </div>
 
-            <section data-background-image="https://s3.mordorintelligence.com/global-defense-cyber-security-markets-industry/global-defense-cyber-security-markets-industry-Defense-Cyber-Security-Market-Market-Share-by-Component-2025-1768469588478.webp">
-                <h2>Conclusión</h2>
-                <p>La seguridad es responsabilidad de todos.</p>
-                <a href="quiz.html" style="color:#fff; background:#007bff; padding:12px 24px; border-radius:6px; text-decoration:none;">Ir a Evaluación</a>
-            </section>
-        </div>
+            <!-- Slide 6: Conclusion -->
+            <div class="custom-slide" data-slide="6" style="display:none;flex-direction:column;justify-content:center;align-items:center;width:100vw;height:calc(100vh - 44px);background:url('https://s3.mordorintelligence.com/global-defense-cyber-security-markets-industry/global-defense-cyber-security-markets-industry-Defense-Cyber-Security-Market-Market-Share-by-Component-2025-1768469588478.webp') center/cover;position:relative;">
+                <div style="background:rgba(0,0,0,0.8);padding:3rem;border-radius:1rem;text-align:center;">
+                    <h2 style="color:#fff;font-size:2.5rem;margin-bottom:1rem;">Conclusión</h2>
+                    <p style="color:#fff;font-size:1.5rem;margin-bottom:2rem;">La seguridad es responsabilidad de todos.</p>
+                    <a href="quiz.html" style="color:#fff;background:#007bff;padding:1rem 2rem;border-radius:0.5rem;text-decoration:none;font-size:1.2rem;display:inline-block;">Ir a Evaluación</a>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button id="prevBtn" style="position:fixed;left:2vw;top:50%;transform:translateY(-50%);z-index:3000;background:rgba(0,0,0,0.7);color:#fff;border:none;padding:1rem 1.5rem;border-radius:50%;font-size:2rem;cursor:pointer;display:none;">❮</button>
+            <button id="nextBtn" style="position:fixed;right:2vw;top:50%;transform:translateY(-50%);z-index:3000;background:rgba(0,0,0,0.7);color:#fff;border:none;padding:1rem 1.5rem;border-radius:50%;font-size:2rem;cursor:pointer;">❯</button>
     </div>
+
+    <style>
+        .topic-link:hover {
+            background:rgba(80,80,120,0.95) !important;
+            transform:scale(1.05);
+        }
+        #custom-slides-container {
+            width: 100vw;
+            height: calc(100vh - 44px);
+            overflow: hidden;
+            position: relative;
+        }
+        .custom-slide {
+            width: 100vw;
+            height: calc(100vh - 44px);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #prevBtn:hover, #nextBtn:hover {
+            background:rgba(0,0,0,0.9);
+            transform:translateY(-50%) scale(1.1);
+        }
+    </style>
+
+    <!-- end custom content layout -->
