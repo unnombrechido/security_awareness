@@ -1,4 +1,6 @@
-                    <!-- Load Bootstrap first so theme can inherit its font stack -->
+                    <!-- Mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Load Bootstrap first so theme can inherit its font stack -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Favicon to prevent 404 -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect fill='%23007bff' width='64' height='64'/></svg>">
@@ -215,7 +217,7 @@
         .topic-link:hover { background: rgba(255,255,255,0.3); transform: scale(1.05); }
         
         /* Mobile Responsive Styles */
-        @media (max-width: 768px) { 
+        @media screen and (max-width: 768px) { 
             /* Base adjustments */
             .reveal { font-size: 16px; } 
             .reveal section { padding: 20px; } 
@@ -238,57 +240,116 @@
             .custom-slide > div[style*="grid-template-columns"] {
                 display: flex !important;
                 flex-direction: column !important;
-                padding: 1rem 0 !important;
+                padding: 4rem 0 0.5rem 0 !important;
                 overflow-y: auto !important;
-                gap: 1rem !important;
+                gap: 0 !important;
             }
             
-            /* Topic buttons containers */
-            .custom-slide > div > div[style*="flex-direction: column"] {
+            /* Topic buttons containers - force no spacing with multiple selectors */
+            .custom-slide[data-slide] > div > div[style*="flex-direction: column"],
+            .custom-slide > div[style] > div[style*="flex"] {
                 width: 100% !important;
-                padding: 0 1rem !important;
-                gap: 0.8rem !important;
+                padding: 0 0.8rem !important;
+                gap: 0 !important;
+                min-height: auto !important;
             }
             
-            /* Topic buttons */
-            .topic-link {
-                padding: 1rem !important;
-                font-size: 0.95rem !important;
+            /* Force zero gap on specific slide containers */
+            .custom-slide[data-slide="1"] > div > div,
+            .custom-slide[data-slide="2"] > div > div,
+            .custom-slide[data-slide="3"] > div > div,
+            .custom-slide[data-slide="4"] > div > div,
+            .custom-slide[data-slide="5"] > div > div {
+                gap: 0 !important;
+            }
+            
+            /* Topic buttons - force compact size */
+            button.topic-link[style],
+            .topic-link[data-topic] {
+                padding: 0.7rem 1rem !important;
+                font-size: 0.9rem !important;
+                min-height: auto !important;
+                margin: 0 !important;
             }
             
             /* Content area */
             [id*="section"][id*="-content"] {
                 width: 100% !important;
-                min-height: 200px !important;
-                padding: 1rem !important;
+                min-height: 180px !important;
+                padding: 0.8rem !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-attachment: scroll !important;
             }
             
-            /* Content text overlay */
+            /* Content text overlay - better contrast */
             [id*="section"][id*="-content"] > div {
-                padding: 1rem !important;
+                padding: 0.8rem !important;
+                max-height: 180px !important;
+                overflow-y: auto !important;
+                background: var(--content-bg-veil, rgba(63, 62, 62, 0.79)) !important;
+                border-radius: 6px !important;
             }
             
-            /* Section titles */
-            .custom-slide > div[style*="position: absolute"] {
-                position: relative !important;
-                top: 0 !important;
+            [id*="section"][id*="-content"] h3 {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.5rem !important;
+                color: #fff !important;
+            }
+            
+            [id*="section"][id*="-content"] p, 
+            [id*="section"][id*="-content"] div {
+                font-size: 0.9rem !important;
+                line-height: 1.4 !important;
+                color: var(--content-font-color, #fafafd) !important;
+            }
+            
+            /* Section titles - fixed positioning at top below menu */
+            .custom-slide[data-slide="1"] > div[style*="position: absolute"],
+            .custom-slide[data-slide="2"] > div[style*="position: absolute"],
+            .custom-slide[data-slide="3"] > div[style*="position: absolute"],
+            .custom-slide[data-slide="4"] > div[style*="position: absolute"],
+            .custom-slide[data-slide="5"] > div[style*="position: absolute"] {
+                position: fixed !important;
+                top: 50px !important;
                 left: 0 !important;
+                right: 0 !important;
                 transform: none !important;
                 width: 100% !important;
-                margin-bottom: 1rem !important;
+                margin: 0 !important;
+                padding: 0.6rem 1rem !important;
+                z-index: 2900 !important;
+                background: rgba(0, 0, 0, 0.90) !important;
             }
             
-            .custom-slide > div[style*="position: absolute"] h2 {
-                font-size: 1.3rem !important;
+            .custom-slide[data-slide="1"] > div[style*="position: absolute"] h2,
+            .custom-slide[data-slide="2"] > div[style*="position: absolute"] h2,
+            .custom-slide[data-slide="3"] > div[style*="position: absolute"] h2,
+            .custom-slide[data-slide="4"] > div[style*="position: absolute"] h2,
+            .custom-slide[data-slide="5"] > div[style*="position: absolute"] h2 {
+                font-size: 1.1rem !important;
+                margin: 0 !important;
             }
             
-            /* Navigation buttons */
+            /* Background images for slides - better mobile scaling */
+            .custom-slide[data-slide="1"],
+            .custom-slide[data-slide="2"],
+            .custom-slide[data-slide="3"],
+            .custom-slide[data-slide="4"],
+            .custom-slide[data-slide="5"] {
+                background-size: cover !important;
+                background-position: center center !important;
+                background-attachment: scroll !important;
+            }
+            
+            /* Navigation buttons - bottom positioning */
             #prevBtn, #nextBtn {
-                padding: 0.7rem 1rem !important;
-                font-size: 1.5rem !important;
-                bottom: 20px !important;
+                padding: 0.6rem 0.9rem !important;
+                font-size: 1.4rem !important;
+                bottom: 10px !important;
                 top: auto !important;
                 transform: none !important;
+                z-index: 3100 !important;
             }
             
             #prevBtn {
@@ -300,37 +361,53 @@
             }
             
             /* Intro slide adjustments */
+            .custom-slide[data-slide="0"] {
+                background-size: cover !important;
+                background-position: center !important;
+            }
+            
             .custom-slide[data-slide="0"] > div {
-                padding: 2rem 1.5rem !important;
+                padding: 1.5rem 1rem !important;
             }
             
             .custom-slide[data-slide="0"] h1 {
-                font-size: 2rem !important;
+                font-size: 1.8rem !important;
+                margin-bottom: 0.8rem !important;
             }
             
             .custom-slide[data-slide="0"] p {
-                font-size: 1.2rem !important;
+                font-size: 1.1rem !important;
             }
             
             /* Conclusion slide */
+            .custom-slide[data-slide="6"] {
+                background-size: cover !important;
+                background-position: center !important;
+            }
+            
             .custom-slide[data-slide="6"] > div {
-                padding: 2rem 1.5rem !important;
+                padding: 1.5rem 1rem !important;
             }
             
             .custom-slide[data-slide="6"] h2 {
-                font-size: 2rem !important;
+                font-size: 1.8rem !important;
             }
             
             .custom-slide[data-slide="6"] p {
-                font-size: 1.2rem !important;
+                font-size: 1.1rem !important;
             }
         }
         
         /* Extra small devices (phones in portrait, less than 576px) */
-        @media (max-width: 575px) {
+        @media screen and (max-width: 575px) {
             #menu-bar-top {
                 padding: 0.3rem 0.5rem !important;
                 height: 45px !important;
+            }
+            
+            #menu-bar-top button {
+                font-size: 0.85rem !important;
+                padding: 0.4rem 0.8rem !important;
             }
             
             #custom-slides-container {
@@ -338,18 +415,66 @@
                 height: calc(100vh - 45px) !important;
             }
             
-            .topic-link {
-                padding: 0.8rem !important;
-                font-size: 0.9rem !important;
+            .custom-slide > div > div[style*="flex-direction: column"] {
+                padding: 0 0.6rem !important;
+                gap: 0.25rem !important;
             }
             
-            .custom-slide > div[style*="position: absolute"] h2 {
-                font-size: 1.1rem !important;
+            .custom-slide .topic-link {
+                padding: 0.65rem 0.85rem !important;
+                font-size: 0.85rem !important;
+            }
+            
+            .custom-slide[data-slide="1"] > div[style*="position: absolute"],
+            .custom-slide[data-slide="2"] > div[style*="position: absolute"],
+            .custom-slide[data-slide="3"] > div[style*="position: absolute"],
+            .custom-slide[data-slide="4"] > div[style*="position: absolute"],
+            .custom-slide[data-slide="5"] > div[style*="position: absolute"] {
+                top: 45px !important;
+                padding: 0.5rem 0.8rem !important;
+            }
+            
+            .custom-slide[data-slide="1"] > div[style*="position: absolute"] h2,
+            .custom-slide[data-slide="2"] > div[style*="position: absolute"] h2,
+            .custom-slide[data-slide="3"] > div[style*="position: absolute"] h2,
+            .custom-slide[data-slide="4"] > div[style*="position: absolute"] h2,
+            .custom-slide[data-slide="5"] > div[style*="position: absolute"] h2 {
+                font-size: 0.95rem !important;
+            }
+            
+            [id*="section"][id*="-content"] {
+                min-height: 160px !important;
+                padding: 0.6rem !important;
+            }
+            
+            [id*="section"][id*="-content"] > div {
+                padding: 0.6rem !important;
+                max-height: 160px !important;
+            }
+            
+            [id*="section"][id*="-content"] h3 {
+                font-size: 1rem !important;
+                margin-bottom: 0.4rem !important;
+            }
+            
+            [id*="section"][id*="-content"] p,
+            [id*="section"][id*="-content"] div {
+                font-size: 0.85rem !important;
+                line-height: 1.3 !important;
             }
             
             #prevBtn, #nextBtn {
                 padding: 0.5rem 0.8rem !important;
-                font-size: 1.3rem !important;
+                font-size: 1.2rem !important;
+                bottom: 8px !important;
+            }
+            
+            .custom-slide[data-slide="0"] h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            .custom-slide[data-slide="0"] p {
+                font-size: 1rem !important;
             }
         }
     </style>

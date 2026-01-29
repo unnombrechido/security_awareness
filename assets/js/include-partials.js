@@ -1,6 +1,12 @@
                 // --- NAVIGATION GATING STATE ---
                 // Track visited topics per section (sections 1-5)
                 let sectionTopicKeys, visitedTopics;
+                let bg_veil = 'rgba(63, 62, 62, 0.79);';
+                let font_color = '#fafafd';
+                
+                // Set CSS variables so mobile CSS can use the same values
+                document.documentElement.style.setProperty('--content-bg-veil', bg_veil);
+                document.documentElement.style.setProperty('--content-font-color', font_color);
                 
                 // Helper: mark topic as visited
                 function markTopicVisited(sectionIdx, topicKey) {
@@ -96,7 +102,7 @@
                       slide.querySelectorAll('.topic-link').forEach(b => b.classList.remove('active'));
                       btn.classList.add('active');
                       if (section5Topics[topic]) {
-                        content.innerHTML = `<div style="background:rgba(255,255,255,0.92);padding:1.5rem;border-radius:0.5rem;"><h3 style="color:#000;margin-bottom:1rem;">${section5Topics[topic].title}</h3><div style="color:#333;font-size:1.1rem;line-height:1.6;">${section5Topics[topic].html}</div></div>`;
+                        content.innerHTML = `<div style="background:`+ bg_veil +`;padding:1.5rem;border-radius:0.5rem;"><h3 style="color:#000;margin-bottom:1rem;">${section5Topics[topic].title}</h3><div style="color:`+font_color+`;font-size:1.1rem;line-height:1.6;">${section5Topics[topic].html}</div></div>`;
                         if (section5Topics[topic].image) {
                           content.style.backgroundImage = `url('${section5Topics[topic].image}')`;
                           content.style.backgroundSize = 'cover';
@@ -152,7 +158,7 @@
                   slide.querySelectorAll('.topic-link').forEach(b => b.classList.remove('active'));
                   btn.classList.add('active');
                   if (section4Topics[topic]) {
-                    content.innerHTML = `<div style="background:rgba(255,255,255,0.92);padding:1.5rem;border-radius:0.5rem;"><h3 style="color:#000;margin-bottom:1rem;">${section4Topics[topic].title}</h3><div style="color:#333;font-size:1.1rem;line-height:1.6;">${section4Topics[topic].html}</div></div>`;
+                    content.innerHTML = `<div style="background:`+ bg_veil +`;padding:1.5rem;border-radius:0.5rem;"><h3 style="color:#000;margin-bottom:1rem;">${section4Topics[topic].title}</h3><div style="color:`+font_color+`;font-size:1.1rem;line-height:1.6;">${section4Topics[topic].html}</div></div>`;
                     if (section4Topics[topic].image) {
                       content.style.backgroundImage = `url('${section4Topics[topic].image}')`;
                       content.style.backgroundSize = 'cover';
@@ -213,7 +219,7 @@
               slide.querySelectorAll('.topic-link').forEach(b => b.classList.remove('active'));
               btn.classList.add('active');
               if (section3Topics[topic]) {
-                content.innerHTML = `<div style="background:rgba(255,255,255,0.92);padding:1.5rem;border-radius:0.5rem;"><h3 style="color:#000;margin-bottom:1rem;">${section3Topics[topic].title}</h3><div style="color:#333;font-size:1.1rem;line-height:1.6;">${section3Topics[topic].html}</div></div>`;
+                content.innerHTML = `<div style="background:`+ bg_veil +`;padding:1.5rem;border-radius:0.5rem;"><h3 style="color:#000;margin-bottom:1rem;">${section3Topics[topic].title}</h3><div style="color:`+font_color+`;font-size:1.1rem;line-height:1.6;">${section3Topics[topic].html}</div></div>`;
                 if (section3Topics[topic].image) {
                   content.style.backgroundImage = `url('${section3Topics[topic].image}')`;
                   content.style.backgroundSize = 'cover';
@@ -276,7 +282,7 @@
           slide.querySelectorAll('.topic-link').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           if (section2Topics[topic]) {
-            content.innerHTML = `<div style="background:rgba(255,255,255,0.92);padding:1.5rem;border-radius:0.5rem;"><h3 style="color:#000;margin-bottom:1rem;">${section2Topics[topic].title}</h3><div style="color:#333;font-size:1.1rem;line-height:1.6;">${section2Topics[topic].html}</div></div>`;
+            content.innerHTML = `<div style="background:`+ bg_veil +`;padding:1.5rem;border-radius:0.5rem;"><h3 style="color:#000;margin-bottom:1rem;">${section2Topics[topic].title}</h3><div style="color:`+font_color+`;font-size:1.1rem;line-height:1.6;">${section2Topics[topic].html}</div></div>`;
             if (section2Topics[topic].image) {
               content.style.backgroundImage = `url('${section2Topics[topic].image}')`;
               content.style.backgroundSize = 'cover';
@@ -452,7 +458,7 @@
           btn.classList.add('active');
           // Show content
           if (section1Topics[topic]) {
-            content.innerHTML = `<div style="background:rgba(255,255,255,0.92);padding:1.5rem;border-radius:0.5rem;"><h3 style="color:#000;margin-bottom:1rem;">${section1Topics[topic].title}</h3><div style="color:#333;font-size:1.1rem;line-height:1.6;">${section1Topics[topic].html}</div></div>`;
+            content.innerHTML = `<div style="background:`+ bg_veil +`;padding:1.5rem;border-radius:0.5rem;"><h3 style="color:#000;margin-bottom:1rem;">${section1Topics[topic].title}</h3><div style="color:`+font_color+`;font-size:1.1rem;line-height:1.6;">${section1Topics[topic].html}</div></div>`;
             if (section1Topics[topic].image) {
               content.style.backgroundImage = `url('${section1Topics[topic].image}')`;
               content.style.backgroundSize = 'cover';
